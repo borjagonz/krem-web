@@ -1,6 +1,13 @@
 /* =========================
    RESET GLOBAL
 ========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Ephesis&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap');
+
+
+
 * {
   margin: 0;
   padding: 0;
@@ -63,14 +70,26 @@ button {
   background: none;
 }
 
+
+
+h1 {
+  font-family: 'Abril Fatface', serif;
+  font-weight: 400;
+}
+
 /* Títulos */
-h1, h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
   font-weight: inherit;
   font-family: Poppins;
 }
 
 h2 {
+  
     font-size: 28px;
+}
+
+p {
+  font-family: Poppins;
 }
 
 

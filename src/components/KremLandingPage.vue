@@ -1,731 +1,1255 @@
 <template>
-  <div class="page">
+  <div class="krem-page">
 
-    <!-- HEADER -->
-<header class="header">
-  
-  <div class="logo-container">
-    <img class="logo" src="../assets/logo-krem.png" alt="Logo Krem">
-  </div>
+    <!-- =========================
+          HEADER
+    ========================== -->
 
-  <!-- BOTÓN HAMBURGUESA -->
-<div :class="['hamburger', { active: menuOpen }]" @click="toggleMenu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-
-  <!-- NAV -->
-  <nav :class="['nav', { open: menuOpen }]">
-    <a href="#sobre" @click="closeMenu">Sobre Nosotros</a>
-    <a href="#menu" @click="closeMenu">Carta</a>
-    <a href="#visitanos" @click="closeMenu">Visítanos</a>
-  </nav>
-
-</header>
-
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-content">
-        <a href="https://www.google.com/maps/place/Krem+%7C+Cheesecake+Shop+in+Gràcia/@41.4003258,2.1554196,17z/data=!3m2!4b1!5s0x12a4a2963a92452b:0x64cf778d0bb635d6!4m6!3m5!1s0x12a4a301db8a8889:0xf479f6de274b3cda!8m2!3d41.4003258!4d2.1579945!16s%2Fg%2F11xdtrn5j_?entry=ttu&g_ep=EgoyMDI2MDMwNS4wIKXMDSoASAFQAw%3D%3D" target="blanck" class="badge">★ 5,0 en reseñas</a>
-        <h1>Ven a disfrutar de un momento dulce en el corazón de Gràcia</h1>
-        <p>Tartas de queso elaboradas artesanalmente con mucho amor</p>
-        <div class="buttons">
-          <a href="#pedido" class="btn-primary">Pedir Ahora</a>
-          <a href="#visitanos" class="btn-secondary">Cómo Llegar</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SOBRE NOSOTROS -->
-<section id="sobre" class="section">
-  <div class="sobre-section">
-
-<div class="sobre-img">
-  <transition name="fade">
-    <img
-      :key="currentIndex"
-      class="sobre-img-content"
-      :src="currentImage"
-      alt=""
+    <header
+      class="topbar"
+      :class="{ scrolled: isScrolled }"
     >
-  </transition>
-</div>
+      <div class="container topbar-inner">
 
-    <div class="sobre-content">
-      <h2>Descubre Krem</h2>
-      <p>
-        Somos la primera pastelería en Barcelona especializada exclusivamente
-        en tartas de queso artesanales. Situados en la Plaça de la Vila de Gràcia, elaboramos cada cheesecake con
-        ingredientes frescos y de calidad, ofreciendo desde el clásico estilo neoyorquino hasta creaciones originales
-        con sabores únicos. Perfecto para los amantes de los postres, en Krem encontrarás la mejor tarta de queso en
-        Barcelona en un ambiente acogedor y moderno.
-      </p>
-    </div>
+        <a href="/" class="logo" :class="{ scrolled: isScrolled }">
 
-  </div>
-</section>
+          <!-- Sustituir -->
+          <img
+            src="../assets/logo-krem.jpg"
+            alt="Krem"
+          >
 
-    <!-- CARTA -->
-    <section id="menu" class="section container">
-      <h2 class="menu-h2">Nuestras Tartas</h2>
-      <div class="cards">
-        <div v-for="item in cheesecakes" :key="item.name" class="card">
-          <img src="../assets/img-1.jpg" alt="" class="menu-img">
-          <div class="title-price"><h3>{{ item.name }}</h3><strong>{{ item.price }}</strong></div>
-          <div class="linea-price"></div>
-          <p>{{ item.description }}</p>
+        </a>
+
+        <div class="topbar-actions">
+
+          <a
+            href="#contact"
+            class="contact-btn"
+          >
+            CONTACTA
+          </a>
+
+          <button
+            class="menu-btn"
+            aria-label="Abrir menú"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
         </div>
+
       </div>
+    </header>
+
+
+
+
+
+    <!-- =========================
+              HERO
+    ========================== -->
+
+    <section class="hero">
+
+      <div class="hero-overlay"></div>
+
+      <div class="container hero-grid">
+
+        <!-- Texto -->
+
+        <div class="hero-copy">
+
+          <div class="hero-logo">
+
+            <img
+              src=""
+              alt=""
+            >
+
+          </div>
+
+          <h1>
+
+            RESTAURACIÓN
+            <br>
+            PROFESIONAL
+
+          </h1>
+
+          <div class="hero-divider"></div>
+
+          <h2>
+
+            CHEESECAKES ARTESANALES
+            <br>
+            PARA RESTAURANTES Y HOTELES
+
+          </h2>
+          <div class="hero-divider"></div>
+
+          <p>
+
+            Postres que elevan tu carta.
+            <br>
+
+            Elaborados artesanalmente en Barcelona
+            con ingredientes de alta calidad.
+
+            Consistencia cremosa,
+            sabor auténtico
+            y presentación impecable.
+
+          </p>
+
+
+
+
+
+          <div class="hero-features">
+
+            <div class="feature">
+
+              <img
+                src="../assets/Artesanal.svg"
+                alt=""
+              >
+
+              <span>
+
+                ELABORACIÓN <br> ARTESANAL
+
+              </span>
+
+            </div>
+
+            <div class="feature">
+
+              <img
+                src="../assets/Premium.svg"
+                alt=""
+              >
+
+              <span>
+
+                CALIDAD <br> PREMIUM
+
+              </span>
+
+            </div>
+
+            <div class="feature">
+
+              <img
+                src="../assets/Ingredientes.svg"
+                alt=""
+              >
+
+              <span>
+
+                INGREDIENTES
+                <br>
+                DE CALIDAD
+
+              </span>
+
+            </div>
+
+            <div class="feature">
+
+              <img
+                src="../assets/Localizacion.svg"
+                alt=""
+              >
+
+              <span>
+
+                HECHO EN
+                <br>
+                BARCELONA
+
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </section>
 
-    <!-- PEDIDO -->
-    <section id="pedido" class="section order">
-      <h2>Pide Tu Porción Hoy</h2>
-      <p>¿Antojo de cheesecake? Te esperamos.</p>
-      <div class="buttons">
-        <button class="btn-primary">Pedir a Domicilio</button>
-        <button class="btn-secondary">Recoger en Tienda</button>
+
+
+
+
+    <!-- =========================
+          ABOUT
+    ========================== -->
+
+    <section
+      class="about"
+      id="about"
+    >
+
+      <div class="container about-grid">
+        <div class="about-left">
+
+                  <div class="about-col">
+
+          <h3>
+
+            KREM RESTAURACIÓN <br>
+            PROFESIONAL
+
+          </h3>
+
+          <span>
+
+            by Dolce Investments SL
+
+          </span>
+
+          <div class="line"></div>
+
+          <p>
+
+            Krem es la marca de cheesecakes artesanas
+            especializada en el canal HORECA.
+
+            Trabajamos para restaurantes,
+            hoteles y cafeterías que buscan
+            postres de calidad superior,
+            consistentes, listos para servir
+            y que aportan valor
+            a su propuesta gastronómica.
+
+          </p>
+
+          <div class="signature">
+
+            Creamos momentos memorables.
+            <br>
+
+            Tú creas experiencias inolvidables.
+
+          </div>
+
+        </div>
+
+
+          <div class="line-vertical"></div>
+          <div class="line2"></div>
+
+
+
+
+        <div class="about-col">
+
+          <h3>
+
+            ¿POR QUÉ KREM?
+
+          </h3>
+          <div class="line"></div>
+
+          <ul>
+
+            <li><span class="check">✔</span> Recetas propias y exclusivas</li>
+
+            <li><span class="check">✔</span> Textura cremosa y sabor equilibrado</li>
+
+            <li><span class="check">✔</span> Ingredientes naturales y de calidad</li>
+
+            <li><span class="check">✔</span> Elaboración artesanal en Barcelona</li>
+
+            <li><span class="check">✔</span> Formato profesional y práctico</li>
+
+            <li><span class="check">✔</span> Consistencia en cada unidad</li>
+
+            <li><span class="check">✔</span> Atención cercana y personalizada</li>
+
+          </ul>
+
+        </div>
+        </div>
+
+
+
+
+
+
+        <div class="about-col professionals">
+
+          <h3>
+
+            HECHO PARA <br>
+            PROFESIONALES
+
+          </h3>
+          <div class="line"></div>
+
+          <ul>
+
+            <li class="about-li-2"><img class="about-img" src="../assets/Restaurante.svg" alt="">RESTAURANTES</li>
+
+            <li class="about-li-2"><img class="about-img" src="../assets/Hoteles.svg" alt="">HOTELES</li>
+
+            <li class="about-li-2"><img class="about-img" src="../assets/Cafe.svg" alt="">CAFETERÍAS</li>
+
+            <li class="about-li-2"><img class="about-img" src="../assets/Catering.svg" alt="">CATERING & EVENTOS</li>
+
+          </ul>
+
+        </div>
+
       </div>
+
     </section>
-
-    <!-- RESEÑAS 
-    <section class="section reviews">
-      <h2>Lo Que Dicen Nuestros Clientes</h2>
-      <p class="review">“Una de las mejores tartas de queso que hemos probado.”</p>
-      <p class="review">“Textura increíble y sabor espectacular. 10/10.”</p>
-      <p class="review">“Sin duda nuestro sitio favorito de cheesecake en Barcelona.”</p>
-    </section> -->
-
-    <!-- VISÍTANOS 
-    <section id="visitanos" class="section">
-      <h2>Visítanos</h2>
-      <p>Plaça de la Vila de Gràcia, 5 · 08012 Barcelona</p>
-      <p>Apertura a las 12:00</p>
-      <p>📞 624 69 28 64</p>
-      <p class="features">
-        ✔ Para llevar <br>
-        ✔ Recogida sin entrar <br>
-        ✔ A domicilio <br>
-        🏳️‍🌈 Espacio amigable con la comunidad LGBTQ+
-      </p>
-    </section>-->
-
-
-
-    <!-- FOOTER -->
-    <footer class="footer">
-      <p>Krem · Tienda de Tartas de Queso en Gràcia</p>
-      <p>Plaça de la Vila de Gràcia, 5 · Barcelona</p>
-      <p>© 2026 Krem. Todos los derechos reservados.</p>
-    </footer>
 
   </div>
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from "vue"
+import { ref,onMounted,onUnmounted } from 'vue'
 
-const cheesecakes = ref([
-  {
-    name: 'Clásica',
-    description: 'Nuestra receta estrella. Cremosa, suave y perfectamente equilibrada.',
-    price: '5.5€'
-  },
-  {
-    name: 'Tiramisú',
-    description: 'La combinación perfecta entre tiramisú y cheesecake.',
-    price: '5.7€'
-  },
-  {
-    name: 'Lotus',
-    description: 'Con galleta caramelizada y topping crujiente Lotus.',
-    price: '5.5€'
-  },
-  {
-    name: 'Chocolate',
-    description: 'Sabor intenso a chocolate con textura sedosa e irresistible.',
-    price: '5.5€'
-  },
-  {
-    name: 'Pistacho',
-    description: 'La combinación perfecta entre tiramisú y cheesecake.',
-    price: '5.7€'
-  },
-  {
-    name: 'Pastel del mes',
-    description: 'La combinación perfecta entre tiramisú y cheesecake.',
-    price: '5.7€'
-  }
-])
+const isScrolled=ref(false)
 
-const images = [
-  new URL("../assets/sobre-1.png", import.meta.url).href,
-  new URL("../assets/sobre-2.png", import.meta.url).href,
-  new URL("../assets/sobre-3.png", import.meta.url).href,
-  new URL("../assets/sobre-4.png", import.meta.url).href,
-  new URL("../assets/sobre-5.png", import.meta.url).href,
-  new URL("../assets/sobre-6.png", import.meta.url).href,
-  new URL("../assets/sobre-7.png", import.meta.url).href
-]
+const handleScroll=()=>{
 
-const currentIndex = ref(0)
+  isScrolled.value=window.scrollY>30
 
-const currentImage = computed(() => images[currentIndex.value])
+}
 
-onMounted(() => {
-  setInterval(() => {
-    currentIndex.value = (currentIndex.value + 1) % images.length
-  }, 4000)
+onMounted(()=>{
+
+  window.addEventListener("scroll",handleScroll)
+
 })
 
-const menuOpen = ref(false)
+onUnmounted(()=>{
 
-const toggleMenu = () => {
-  menuOpen.value = !menuOpen.value
-}
+  window.removeEventListener("scroll",handleScroll)
 
-const closeMenu = () => {
-  menuOpen.value = false
-}
-
+})
 </script>
 
 <style scoped>
 
-.page {
-  font-family: 'Inter', sans-serif;
-  background-color: #fffaf6;
-  color: #333;
+/*==================================================
+ VARIABLES
+==================================================*/
+
+:root{
+
+  --black:#0A0A0A;
+  --cream:#F4ECE3;
+  --terracotta:#B66C58;
+  --text:#262626;
+  --white:#FFFFFF;
+
+  --container:1380px;
+
 }
 
-.section {
-  padding: 80px 50px;
-  text-align: center;
+/*==================================================
+ RESET
+==================================================*/
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+
+  scroll-behavior:smooth;
+
+}
+
+body{
+
+  font-family:Inter,sans-serif;
+  background:var(--cream);
+  color:var(--text);
+
+}
+
+img{
+
+  display:block;
+  max-width:100%;
+
+}
+
+a{
+
+  text-decoration:none;
+  color:inherit;
+
+}
+
+button{
+
+  font-family:inherit;
+  cursor:pointer;
+}
+
+.krem-page{
+
+  overflow:hidden;
+
+}
+
+.container{
+
+  width:min(var(--container),92%);
+  margin:auto;
+
 }
 
 
-/* HEADER */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #982c20;
-  width: 100%;
-  padding: 25px 30px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-sizing: border-box;
+/*==================================================
+ HEADER
+==================================================*/
+
+.topbar{
+
+  position:fixed;
+  top:0;
+  left:0;
+
+  width:100%;
+  z-index:999;
+
+  transition:.35s;
+
+    padding: 60px;
+
 }
 
-.logo {
-  font-size: 26px;
-  font-weight: bold;
-  height: 30px;
+.topbar.scrolled{
+
+  backdrop-filter:blur(16px);
+
+  background:rgba(0,0,0, 0.35);
+
+  padding: 30px 60px;
+
 }
 
-.nav {
-  display: flex;
-  align-items: center;
+.topbar-inner{
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
 }
 
-.nav a {
-  margin-left: 30px;
-  text-decoration: none;
-  color: #e0b1ab;
-  font-weight: 900;
-  font-family: Poppins;
-  font-size: 22px;
+.logo{
+
+  width:200px;
+  transition: 0.8s ;
+
 }
 
-.nav a:hover{
-  color: white;
-  transition: 0.3s;
+.logo.scrolled {
+  width: 150px;
 }
 
-/* HERO */
-.hero {
-  position: relative;
-  background: linear-gradient(rgba(152,44,32,1), rgba(152,44,32,0.8)),
-              url('https://images.unsplash.com/photo-1542826438-bd32f43d626f') center/cover;
-  padding: 0;
-  text-align: center;
-  align-content: center;
-  font-family: Poppins;
-  min-height: 600px;
+.logo img{
+
+  width:100%;
+
 }
 
-.hero-content {
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0px;
+.topbar-actions{
+
+  display:flex;
+  align-items:center;
+  gap:20px;
+
 }
 
-.hero h1 {
-  font-size: 70px;
-  margin: 20px 0;
-  padding: 0px 40px;
-  font-family: Poppins;
-  font-weight: 900;
-  color: rgb(255, 244, 229);
-}
+.contact-btn{
 
-.hero p {
-  font-size: 28px;
-  margin-bottom: 30px;
-  padding: 0px 40px;
-  font-family: Poppins;
-  color: #f3c6c6;
-}
+  color:#eebfb9;
 
-.badge {
-  display: inline-block;
-  background: rgb(255, 174, 0);
-  color: #982c20;
-  padding: 6px 16px;
-  border-radius: 20px;
+  text-transform:uppercase;
+
+  letter-spacing:2px;
+
   font-size: 16px;
+
+  outline: 1px solid #eebfb9;
+
+  padding: 12px 20px;
+
+  border-radius:200px;
+}
+
+.menu-btn{
+
+  width:48px;
+  height:48px;
+
+  border-radius:200px;
+
+  background:#eebfb9;
+  border:none;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center; /* Centra verticalmente */
+  align-items:center;     /* Centra horizontalmente */
+  gap:4px;
+
+}
+
+.menu-btn span{
+
+  display:block;
+
+  width:20px;
+  height:3px;
+
+  background:#973e30;
+
+}
+
+
+/*==================================================
+ HERO
+==================================================*/
+
+.hero{
+
+  position:relative;
+
+  height:100vh;
+
+  background:var(--black);
+
+  overflow:hidden;
+
+  background-image: url('../assets/Krem-Hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 60px;
+
+}
+
+.hero-overlay{
+
+  position:absolute;
+  inset:0;
+  z-index:2;
+
+}
+
+.hero-grid{
+
+  position:relative;
+  z-index:5;
+
+  min-height:100vh;
+
+  display:grid;
+
+  grid-template-columns:47% 53%;
+
+}
+
+.hero-copy{
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+
+  color:white;
+
+  padding-top:50px;
+
+}
+
+
+
+.hero-copy h1{
+
+  font-size:52px;
+
+  line-height: 1.1;
+
+  font-weight:500;
+
+  margin-bottom:21px;
+
+  color: #eebfb9;
+
+  letter-spacing: 1px;
+}
+
+.hero-divider{
+
+  width:90px;
+  height:1px;
+
+  background: #973e30;
+
+  margin-bottom:25px;
+
+}
+
+.hero-copy h2{
+
+  color: #eebfb9;
+
+  font-size:24px;
+
+  font-weight:400;
+
+  margin-bottom:25px;
+
+  line-height: 1.3;
+
+  letter-spacing: 1px;
+
+}
+
+.hero-copy p{
+
+  width:450px;
+
+  color:rgba(255, 214, 214, 0.8);
+
+  line-height:1.7;
+
+  font-size:1rem;
+
+
+}
+
+.hero-features{
+
+  display: flex; 
+
+  gap:35px;
+
+  margin-top: 75px;
+
+  margin-left: 0;
+
+
+}
+
+.feature{
+
+  color:#eebfb9;
+  justify-items: center;
+  text-align: center;
+  line-height: 1;
+  font-weight: 500;
+
+}
+
+.feature img{
+
+  width: 35px;
+  height: 40px;
+  margin-bottom: 10px;
+
+}
+
+.feature span{
+
+  font-size:.82rem;
+
+  line-height:1.5;
+
+  letter-spacing:1px;
+
+}
+
+.hero-image{
+
+  position:relative;
+
+}
+
+
+
+
+/*==================================================
+ ABOUT
+==================================================*/
+
+.about{
+
+  background-color: #f8eeec;
+
+
+}
+
+.about-grid{
+
+    display:grid;
+    grid-template-columns:2fr 0.8fr;
+}
+
+
+.about-left{
+
+    display:grid;
+    grid-template-columns:1fr 2px 1fr;
+
+    align-items:stretch;
+
+
+}
+
+.about-col{
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-bottom: 60px;
+}
+
+.about-col h3{
+
+  font-family:"Cormorant Garamond",serif;
+
+  font-size: 24px;
+
   font-family: Poppins;
-  font-weight: 900;
-  outline: solid 1px rgb(255, 174, 0);
-  outline-offset: 5px;
-  margin-bottom: 15px;
-  cursor: pointer;
+  font-weight: 600;
+
+  color: #b03724;
+  padding: 60px 0px 0px 0px;
+
 }
 
-.badge:hover {
-  scale: 108%;
-  transition: 0.3s;
+.about-col span{
+
+  display:block;
+  font-weight: 400;
+  font-size: 20px;
+
 }
 
+.line{
 
+  width:80px;
+  height:1px;
 
-/* transición */
+  background: #b03724;
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 2s ease;
+  margin-bottom:20px;
+  margin-top: 20px;
+
 }
 
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
+.line2{
+
+  width:100%;
+  height:1px;
+
+  background: #b03724;
+
+  margin:0px 40px;
+
+  display: none;
+
 }
 
-/* CARTAS */
+.line-vertical{
 
-#menu {
-  background-color: rgb(255, 244, 229);
-  margin: 0 auto;
-  justify-content: center;
+  width:1px;
+
+  background:#b03724;
+
+  opacity:.3;
+
+  margin-top: 60px;
+
+  margin-right: 60px;
+  margin-bottom: 60px;
+
 }
 
-.title-price {
+.about-col p{
+
+  line-height:2;
+
+}
+
+.signature{
+
+  margin-top:45px;
+
+  font-style:italic;
+
+  color: #b03724;
+
+  font-size: 24px;
+
+  font-family: "Oooh Baby", cursive;
+  font-weight: 600;
+  font-style: normal;
+
+  letter-spacing: 0.8px;
+
+}
+
+.about-col ul{
+
+  list-style:none;
+
+}
+
+.about-col li{
+
+  padding:14px 0;
+  font-size: 16px;
   display: flex;
-  justify-content: space-between;
+  gap: 10px;
+  
+
 }
 
-.menu-h2 {  
-  font-weight: 900;
-  padding-bottom: 40px;
-  color: #982c20;
+.about-li-2 {
+  color: #b03724;
+  line-height: 2.5;
 }
 
-.menu-img {
-  height: 55%;
-  width: 55%;
-  justify-content: center;
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 100px;
+.about-img {
+  width: 23px;
 }
 
-.linea-price {
-  height: 8px;
-  background-color: #982c20;
-  width: 100%;
-  margin: 0px 0px 15px 0px;
+.check {
+  color: #b03724;
 }
 
-.cards {
+.professionals{
+
+  background:#f6dede;
+
+  height: 100%;
+
+  padding:60px;
+
+padding-top: 0px;
+
+
+}
+
+
+/*==================================================
+ RESPONSIVE
+==================================================*/
+
+@media(max-width:1400px) {
+
+  .hero-overlay{
+
+  position:absolute;
+  inset:0;
+
+  background:linear-gradient(
+      90deg,
+      rgba(0,0,0, 1) 0%,
+      rgba(0,0,0,.8) 20%,
+      rgba(0,0,0,.4) 40%,
+      rgba(0,0,0, 0) 60%,
+      rgba(0,0,0, 0) 100%
+  );
+
+  z-index:2;
+
+}
+}
+
+@media(max-width:1200px){
+
+.hero-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.hero-image{
+
+height:55vh;
+
+}
+
+.hero-image img{
+
+position:relative;
+
+width:100%;
+
+right:auto;
+
+}
+
+  .hero-overlay{
+
+  position:absolute;
+  inset:0;
+
+  background:linear-gradient(
+      90deg,
+      rgba(0,0,0, 1) 0%,
+      rgba(0,0,0,.8) 20%,
+      rgba(0,0,0,.6) 40%,
+      rgba(0,0,0,.1) 60%,
+      rgba(0,0,0, 0) 100%
+  );
+
+  z-index:2;
+
+}
+
+.about-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:900px) {
+
+  .hero-overlay{
+
+  position:absolute;
+  inset:0;
+
+  background:linear-gradient(
+      90deg,
+      rgba(0,0,0, 1) 0%,
+      rgba(0,0,0,.9) 20%,
+      rgba(0,0,0,.8) 40%,
+      rgba(0,0,0,.4) 60%,
+      rgba(0,0,0, 0) 100%
+  );
+
+  z-index:2;
+
+}
+}
+
+@media(max-width:768px){
+
+.topbar {
+  padding: 40px;
+}
+
+.topbar.scrolled {
+  padding: 40px;
+}
+
+.hero {
+  padding: 40px;
+}
+
+.hero-copy h1{
+
+font-size:42px;
+
+}
+
+.hero-copy h2 {
+  font-size: 20px
+}
+
+.hero-copy p{
+
+  font-size: 14px;
+
+  width:300px;
+
+}
+
+
+.feature img{
+
+  width: 30px;
+  height: 40px;
+  margin-bottom: 2px;
+
+}
+
+.feature span{
+
+  font-size:.62rem;
+
+  line-height:1.5;
+
+  letter-spacing:1px;
+
+}
+
+.topbar-inner{
+
+height:75px;
+
+}
+
+.about-left{
   display: flex;
   flex-wrap: wrap;
-  gap: 35px;
-  margin-top: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  justify-content: center;
 }
 
-.card {
-  background: rgb(255, 244, 229);
-  padding: 25px;
-  border-radius: 50px;
-  box-shadow: 0px 15px 25px rgba(152,44,32,0.12);
-  transition: 0.3s;
-  width: 320px;
-  height: 320px;
+.about-col {
+  width: 100vw;
+  padding: 40px;
 }
 
-.card:hover {
-  transform: translateY(-5px);
+.about h3 {
+  padding-top: 0px;
+  font-size: 20px;
+  line-height: 1.3;
 }
 
-.card h3{
-  color: #982c20;
+.about span {
   font-size: 18px;
-  font-weight: 400;
-  padding-top: 10px;
 }
 
-.card strong{
-  color: #982c20;
-  font-size: 18px;
-  font-family: Poppins;
-  font-weight: 400;
-  padding-top: 10px;
+.about p {
+  font-size: 14px
 }
 
-.card p{
-  font-family: Poppins;
-  font-size: 15px;
-  padding-top: 10px;
-  color: #982c20;
+.about li {
+  font-size: 14px;
 }
 
-/* SOBRE */
+.signature {
+  font-size: 20px;
+}
 
+.line-vertical {
+  display: none;
+}
 
-#sobre {
-  background-color: #f3c6c6;
-  margin: 0 auto;
+.line2{
+
+  width:100%;
+  height:1px;
+
+  background: #b03724;
+
+  margin:0px 40px;
+
+  display: inherit;
 
 }
 
-.sobre-section {
-  max-width: 1500px;
-  min-height: 450px;
-  display: flex;
-  padding: 0px 0px;
-  justify-content: space-around;
-  margin: 0 auto;
-  gap: 50px;
-}
-
-.sobre-content {
-  margin: 0;
-  width: 56%;
-  max-height: 550px;
-  align-content: center;
-  display: space-around;
-}
-
-.sobre-img {
-  position: relative;
-  width: 45%;
-  max-height: 550px;
-  width: 450px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden; /* Esconder el sobrante */
-}
-
-.sobre-img:hover{
-  scale: 115%;
-  transition: 0.6s;
-}
-
-.sobre-img-content {
-  position: absolute;
-  border-radius: 500px;
-  max-height: 450px;
-  width: 450px;
-  object-fit: cover;
-  object-position: center;  
-}
-
-#sobre h2{
-  font-weight: 900;
-  padding-bottom: 40px;
-  color: #982c20;
-}
-
-#sobre p {
-  font-size: 22px;
-  color: #982c20;
 }
 
 
-/* RESEÑAS */
-.reviews {
-  background: #fff0f0;
+
+
+@media(max-width:600px){
+
+  .topbar {
+    padding: 30px;
+  }
+
+  .topbar.scrolled{
+    padding: 30px;
+  }
+
+    .topbar img {
+    width: 150px;
+  }
+
+  .contact-btn {
+    font-size: 12px;
+  }
+
+  .menu-btn {
+    width: 45px;
+    height: 45px;
+  }
+
+  .topbar-actions {
+    gap: 10px;
+  }
+
+  .hero {
+    padding: 30px;
+  }
+
+.hero-copy h1{
+
+font-size:42px;
+
 }
 
-.review {
-  max-width: 700px;
-  margin: 20px auto;
-  font-style: italic;
+.hero-copy h2 {
+  font-size: 20px
 }
 
-/* PEDIDO */
-.order {
-  background: #f9e8e8;
+.hero-copy p{
+
+  font-size: 14px;
+
+  width:300px;
+
 }
 
-#pedido h2 {
-  font-weight: 900;
-  padding-bottom: 20px;
-  color: #982c20;
+  .hero-overlay{
+
+  position:absolute;
+  inset:0;
+
+  background:linear-gradient(
+      90deg,
+      rgba(0,0,0, 1) 0%,
+      rgba(0,0,0,.9) 20%,
+      rgba(0,0,0,.8) 40%,
+      rgba(0,0,0,.6) 60%,
+      rgba(0,0,0,.3) 100%
+  );
+
+  z-index:2;
+
 }
 
-/* BOTONES */
-.buttons {
+.hero-features {
   margin-top: 50px;
 }
 
+.feature img{
 
-.btn-primary {
-  padding: 12px 28px;
-  border-radius: 30px;
-  border: none;
-  cursor: pointer;
-  margin: 10px;
-  background: #982c20;
-  color: #f3c6c6;
-  font-weight: 900;
-  font-size: 18px;
-  display: inline-block; /* Necesario para que transform funcione correctamente en elementos inline */
-  transition: transform 0.3s ease;
-}
-
-.btn-primary:hover {
-  background: white;
-  color: #982c20;
-  transform: scale(1.1); 
-  transition: 0.3s;
-}
-
-.primary:hover {
-  background: white;
-  color: #982c20;
-  scale: 108%;
-  transition: 0.3s;
-}
-
-.btn-secondary {
-  padding: 12px 28px;
-  border-radius: 30px;
-  border: none;
-  cursor: pointer;
-  margin: 10px;
-  background: #f3c6c6;
-  color: #982c20;
-  font-weight: 900;
-  font-size: 18px;
-  display: inline-block; /* Necesario para que transform funcione correctamente en elementos inline */
-  transition: transform 0.3s ease;
-}
-
-.btn-secondary:hover {
-  background: white;
-  transform: scale(1.1); 
-  transition: 0.3s;
-}
-
-/* FOOTER */
-.footer {
-  padding: 20px 0;
-  text-align: center;
-  font-weight: 400;
-  font-size: 14px;
-  font-family: Poppins;
-  background-color: #982c20;
-  color: #e0b1ab;
-}
-
-
-.hamburger {
-  display: none;
-  position: relative;
   width: 30px;
-  height: 30px;
-  cursor: pointer;
-  z-index: 2000;
+  height: 40px;
+  margin-bottom: 2px;
+
 }
 
-.hamburger span {
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background: #f3c6c6;
-  border-radius: 0px;
-  transition: 0.3s ease;
+.feature span{
+
+  font-size:.62rem;
+
+  line-height:1.5;
+
+  letter-spacing:1px;
+
 }
 
-/* líneas */
-.hamburger span:nth-child(1) {
-  top: 0;
+
+
+.topbar-inner{
+
+height:75px;
+
 }
 
-.hamburger span:nth-child(2) {
-  top: 10px;
+.about-col {
+  width: 100vw;
+  padding: 30px;
 }
 
-.hamburger span:nth-child(3) {
-  top: 20px;
+.about h3 {
+  padding-top: 0px;
 }
 
-.hamburger.active span:nth-child(1) {
-  top: 10px;
-  scale: 115%;
-  transform: rotate(45deg);
+.line-vertical {
+  display: none;
 }
 
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
+.line2{
+
+  width:100%;
+  height:1px;
+
+  background: #b03724;
+
+  margin:5px 30px;
+
+  display: inherit;
+
 }
 
-.hamburger.active span:nth-child(3) {
-  top: 10px;
-  scale: 115%;
-  transform: rotate(-45deg);
 }
 
-@media (max-width: 1250px) {
+@media(max-width:500px){
 
-  .hero h1{
-    font-size: 64px;
+  .topbar img {
+    width: 125px;
   }
 
-  .hero p{
-    font-size: 23px;
-  }
+  .hero-copy h1{
 
-  #sobre p{
-    font-size: 20px;
-  }
+font-size:36px;
+
 }
 
-@media (max-width: 1100px) {
-
-  .hero h1{
-    font-size: 62px;
-  }
-
-  .hero p{
-    font-size: 23px;
-  }
-
-  #sobre p{
-    font-size: 20px;
-  }
+.hero-copy h2 {
+  font-size: 18px
 }
 
-@media (max-width: 1000px) {
+.hero-copy p{
 
-  .hero h1{
-    font-size: 60px;
-  }
+  font-size: 14px;
 
-  .hero p{
-    font-size: 23px;
-  }
+  width:300px;
 
-  #sobre p{
-    font-size: 20px;
-  }
 }
 
-@media (max-width: 900px) {
-
-  .hero h1{
-    font-size: 50px;
-  }
-
-  .hero p{
-    font-size: 21px;
-  }
-
-  #sobre p{
-    font-size: 18px;
-  }
+.hero-features {
+  flex-wrap: wrap;
+  width: 60%;
 }
 
-@media (max-width: 768px) {
+}
 
-  .header {
-    padding: 25px 30px;
-  }
+@media(max-width:400px){
 
   .hero h1 {
     font-size: 30px;
   }
 
+  .topbar img {
+    width: 100px;
+  }
+
+  .contact-btn {
+    font-size: 10px;
+  }
+
+  .menu-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hero-copy {
+    padding-top: 80px;
+  }
+
+  .hero-features {
+    width: 100%;
+    margin-top: 20px;
+    gap: 12px;
+  }
+
+  .feature {
+    scale: 80%;
+  }
+
   .hero p {
-    font-size: 18px;
-  }
-
-  .sobre-section{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-  }
-
-  .sobre-content{
-    margin: 0;
     width: 100%;
-    padding: 0px 0px 50px 0px;
   }
 
-  .sobre-img{
-    max-height: 450px;
-    min-height: 450px;
-    max-width: 450px;
-  }
-
-  .sobre-img-content {
-    width: 100%;
-    height: 100%;
-  }
-
-  /* mostrar hamburguesa */
-  .hamburger {
-    display: flex;
-  }
-
-  /* ocultar menu normal */
-  .nav {
-    display: none;
-  }
-
-  /* menu cuando se abre */
-  .nav.open {
-    display: flex;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: #982c20;
-    width: 100%;
-    height: 100vh;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-  }
-
-  .nav a {
-    margin: 15px 0;
-    font-size: 24px;
-  }
-
-
-
-#sobre p {
-  font-size: 18px;
-  color: #982c20;
 }
 
-}
+
 
 </style>
