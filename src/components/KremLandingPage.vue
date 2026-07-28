@@ -310,6 +310,154 @@
 
     </section>
 
+    <!-- =========================
+      FORMATOS + SABORES
+========================= -->
+
+<section class="formats">
+
+  <div class="container formats-grid">
+
+    <!-- IZQUIERDA -->
+
+    <div class="formats-left">
+
+      <h2>FORMATOS DISPONIBLES</h2>
+
+      <div class="line"></div>
+
+      <div class="formats-cards">
+
+        <!-- ORIGINAL -->
+
+        <article class="format-card">
+
+          <img
+            src="../assets/FormatoOriginal.jpg"
+            alt=""
+          >
+
+          <div>
+
+            <h3>FORMATO ORIGINAL</h3>
+
+            <ul>
+
+              <li>· Ø 24 cm</li>
+
+              <li>· Sugerido 10 porciones</li>
+
+              <li>· Base de galleta crujiente</li>
+
+              <li>· Ideal para carta de postres y celebraciones</li>
+
+            </ul>
+
+          </div>
+
+        </article>
+
+        <!-- MENU -->
+
+        <article class="format-card">
+
+          <img
+            src="../assets/FormatoMenu.jpg"
+            alt=""
+          >
+
+          <div>
+
+            <h3>FORMATO MENÚ</h3>
+
+            <ul>
+
+              <li>· Más pequeño</li>
+
+              <li>· Sin base de galleta</li>
+
+              <li>· 3 tartas por caja</li>
+
+              <li>· Sugerido 36 porciones</li>
+
+              <li>· Ideal para menú degustación</li>
+
+            </ul>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+
+          <div class="line2"></div>
+
+
+
+    <!-- DERECHA -->
+
+    <div class="flavours">
+
+      <h2>SABORES</h2>
+
+      <div class="line"></div>
+
+      <div class="flavours-grid">
+
+        <article class="flavour">
+
+          <img src="../assets/Classic.jpg">
+            <div class="flavour-text">          
+              <h3>CLASSIC</h3>
+              <p>
+              El equilibrio perfecto entre
+              cremosidad y sabor.
+              </p>
+            </div>
+
+
+        </article>
+
+        <article class="flavour">
+
+          <img src="../assets/Lotus-DulceLeche.jpg">
+            <div class="flavour-text">          
+              <h3>LOTUS<br>DULCE DE LECHE</h3>
+              <p>
+              Suave, especiado
+              y absolutamente adictivo.
+              </p>
+            </div>
+
+
+        </article>
+
+        <article class="flavour">
+
+          <img src="../assets/Chocolate.jpg">
+            <div class="flavour-text">          
+              <h3>XOCOLATA</h3>
+               <p>
+               Intenso, cremoso
+               y con el punto justo
+               de dulzor.
+            </p>
+          </div>
+
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
   </div>
 </template>
 
@@ -847,6 +995,148 @@ padding-top: 0px;
 
 }
 
+/*==================================================
+FORMATOS
+==================================================*/
+
+.formats{
+
+    background:white;
+
+    padding:70px 0;
+
+}
+
+.formats-grid{
+
+    display:grid;
+
+    grid-template-columns:1.25fr 1fr;
+
+}
+
+.formats-left{
+
+    padding: 0px 60px;
+
+    border-right:1px solid rgba(176,55,36,.25);
+
+}
+
+.flavours{
+
+  padding: 0px 60px;
+
+}
+
+.formats h2{
+
+    font-size:24px;
+
+    color:#b03724;
+
+    font-weight:600;
+
+    margin-bottom:20px;
+
+}
+
+.formats-cards{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap: 40px;
+
+    margin-top:40px;
+
+}
+
+.format-card{
+
+    display:flex;
+
+    gap:20px;
+
+    align-items:flex-start;
+
+}
+
+.format-card img{
+
+    width:160px;
+
+    flex-shrink:0;
+
+}
+
+.format-card h3{
+
+
+    font-size:16px;
+    font-weight: 600;
+    margin-bottom:12px;
+
+}
+
+.format-card li{
+
+    font-size:14px;
+
+    line-height:1.8;
+
+    color:#555;
+
+}
+
+.flavours-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+    margin-top:40px;
+
+}
+
+.flavour{
+
+    text-align:center;
+
+}
+
+.flavour img{
+
+    width:120px;
+
+    margin:auto;
+
+}
+
+.flavour h3{
+
+    margin-top: 16px;
+
+    font-size:16px;
+    font-weight: 600;
+
+}
+
+.flavour p{
+
+    margin-top:12px;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+    color:#666;
+
+}
+
 
 /*==================================================
  RESPONSIVE
@@ -870,6 +1160,37 @@ padding-top: 0px;
 
   z-index:2;
 
+}
+
+.container.formats-grid{
+  grid-template-columns: 1fr 1fr;
+}
+
+.formats-cards{
+
+  display:flex;
+  flex-wrap: wrap;
+
+}
+
+.flavours-grid{
+
+  display:flex;
+  flex-wrap: wrap;
+
+}
+
+.flavour {
+
+    display:flex;
+
+    gap:20px;
+
+    align-items:flex-start;
+}
+
+.flavour-text {
+  text-align: left;
 }
 }
 
@@ -942,6 +1263,44 @@ grid-template-columns:1fr;
   z-index:2;
 
 }
+
+.container.formats-grid{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.formats-left {
+  width: 100%;
+}
+
+.formats-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 60px;
+}
+
+.format-card {
+  display: flex;
+  margin: 0 auto;  
+}
+
+.formats img{
+  margin: 0 auto;  
+}
+
+.flavours-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.flavour {
+  flex-direction: column;
+  gap: 0;
+}
+.flavour-text {
+    text-align: center;
+
+}
 }
 
 @media(max-width:768px){
@@ -997,7 +1356,7 @@ font-size:42px;
 
 .topbar-inner{
 
-height:75px;
+height:100px;
 
 }
 
@@ -1047,6 +1406,57 @@ height:75px;
   margin:0px 40px;
 
   display: inherit;
+
+}
+
+.formats {
+  padding: 0;
+}
+
+.formats-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.formats-left{
+
+    border-right:none;
+
+
+}
+
+.formats-left,
+.flavours{
+
+    padding:40px;
+    width: 100%;
+
+}
+
+.flavour {
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.formats-cards{
+  display: grid;
+    grid-template-columns:1fr;
+
+}
+
+.format-card {
+  display: grid;
+  grid-template-columns:1fr 2fr;
+  width: 100%;
+}
+
+.flavours-grid{
+
+    grid-template-columns:1fr;
+    justify-content: center;
+  width: 100%;
+    gap:45px;
 
 }
 
@@ -1186,6 +1596,12 @@ height:75px;
     width: 125px;
   }
 
+  .topbar-inner{
+
+height:62.5px;
+
+}
+
   .hero-copy h1{
 
 font-size:36px;
@@ -1209,6 +1625,15 @@ font-size:36px;
   width: 60%;
 }
 
+.format-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
 }
 
 @media(max-width:400px){
@@ -1220,6 +1645,12 @@ font-size:36px;
   .topbar img {
     width: 100px;
   }
+
+    .topbar-inner{
+
+height:50px;
+
+}
 
   .contact-btn {
     font-size: 10px;
@@ -1237,11 +1668,17 @@ font-size:36px;
   .hero-features {
     width: 100%;
     margin-top: 20px;
-    gap: 12px;
+    gap: 10px;
   }
 
-  .feature {
-    scale: 80%;
+  .feature img {
+    width: 25px;
+    margin: 0;
+  }
+
+  .feature span {
+    font-size: .52rem;
+    line-height: 1; 
   }
 
   .hero p {
