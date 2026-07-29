@@ -458,6 +458,131 @@
 
 </section>
 
+<!-- ==========================================
+     CON O SIN BASE DE GALLETA
+=========================================== -->
+
+<section class="base-section">
+
+    <div class="container">
+
+        <h2>CON O SIN BASE DE GALLETA</h2>
+
+        <div class="title-line"></div>
+
+        <div class="base-grid">
+
+            <article class="base-card">
+
+                <img
+                    src="../assets/ConBaseGalleta.svg"
+                    alt="Con base"
+                >
+
+                <h3>CON BASE</h3>
+
+                <p>
+                    Base de galleta crujiente que
+                    aporta textura y contraste.
+                </p>
+
+            </article>
+
+            <article class="base-card">
+
+                <img
+                    src="../assets/SinBaseGalleta.svg"
+                    alt="Sin base"
+                >
+
+                <h3>SIN BASE</h3>
+
+                <p>
+                    Más ligera, pura cremosidad
+                    en cada bocado.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- ==========================================
+     FRANJA CARACTERÍSTICAS
+=========================================== -->
+
+<section class="features">
+
+    <div class="container features-grid">
+
+        <article class="feature">
+
+            <img src="../assets/Conservacion.svg">
+
+            <h3>CONSERVACIÓN</h3>
+
+            <p>
+                Conservar refrigerado
+                (0-5ºC). <br>
+                Vida útil: 7 días.
+            </p>
+
+
+        </article>
+
+        <article class="feature">
+
+            <img src="../assets/ListoServir.svg">
+
+            <h3>LISTO PARA SERVIR</h3>
+
+            <p>
+                Producto fresco,
+                listo para disfrutar
+                sin preparaciones.
+            </p>
+
+        </article>
+
+        <article class="feature">
+
+            <img src="../assets/Entrega.svg">
+
+            <h3>ENTREGA EN BARCELONA</h3>
+
+            <p>
+                Entregas programadas
+                según tus necesidades. <br>
+                Zonas y días establecidos.
+            </p>
+
+        </article>
+
+        <article class="feature">
+
+            <img src="../assets/Packaging.svg">
+
+            <h3>PACKAGING PROFESIONAL</h3>
+
+            <p>
+                Presentación cuidada,
+                práctica y segura
+                para el transporte.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
   </div>
 </template>
 
@@ -1086,7 +1211,7 @@ FORMATOS
 
     line-height:1.8;
 
-    color:#555;
+    color:#333;
 
 }
 
@@ -1133,7 +1258,175 @@ FORMATOS
 
     line-height:1.6;
 
-    color:#666;
+    color:#333;
+
+}
+
+/*=========================================
+BASE GALLETA
+=========================================*/
+
+.base-section{
+
+  background-color: #f8eeec;
+
+    padding:70px 0 90px;
+
+
+}
+
+.base-section h2{
+
+    text-align:center;
+
+    color:#9f4638;
+
+    font-size:24px;
+
+    font-weight:600;
+
+}
+
+.title-line{
+
+    width:90px;
+
+    height:2px;
+
+    background:#c78574;
+
+    margin:18px auto 55px;
+
+}
+
+.base-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:60px;
+
+  padding: 0px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.base-card{
+
+    text-align:center;
+
+}
+
+.base-card img{
+
+    width:135px;
+
+    margin:auto;
+
+}
+
+.base-card h3{
+
+    margin-top:22px;
+
+    color:black;
+
+    font-size:16px;
+    font-weight: 600;
+
+}
+
+.base-card p{
+
+  font-size: 14px;
+
+    margin-top:12px;
+
+    color:#333;
+
+    line-height:1.7;
+
+}
+
+
+
+
+
+/*=========================================
+FEATURES
+=========================================*/
+
+.features{
+
+    background:#bf6d60;
+
+    color:white;
+
+    padding:60px 0;
+
+}
+
+.features-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:45px;
+
+}
+
+.feature{
+
+    text-align:center;
+
+}
+
+.feature img{
+
+    width:56px;
+
+    height:56px;
+
+    margin:auto;
+
+    margin-bottom:22px;
+
+    opacity:.95;
+
+}
+
+.feature h3{
+
+    font-size:18px;
+
+    margin-bottom:15px;
+
+    font-weight:600;
+    color: #f8eeec;
+
+}
+
+.feature p{
+
+    line-height:1.5;
+
+    font-size:14px;
+    color: #f8eeec;
+    opacity: .8;
+
+    font-weight: 400;
+
+
+}
+
+.feature span{
+
+    font-size:14px;
+    color: #f8eeec;
+    opacity: .8;
+    font-weight: 400;
 
 }
 
@@ -1460,6 +1753,22 @@ height:100px;
 
 }
 
+.base-grid{
+
+    grid-template-columns:1fr;
+
+    gap:70px;
+
+}
+
+.features-grid{
+
+    grid-template-columns:1fr 1fr;
+
+    gap:50px;
+
+}
+
 }
 
 
@@ -1587,6 +1896,12 @@ height:75px;
   display: inherit;
 
 }
+
+    .features-grid{
+
+        grid-template-columns:1fr;
+
+    }
 
 }
 
