@@ -1371,9 +1371,10 @@ FEATURES
 
     display:grid;
 
-    grid-template-columns:repeat(4,1fr);
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap:40px;
 
-    gap:45px;
+    padding: 0px 60px;
 
 }
 
@@ -1534,6 +1535,10 @@ right:auto;
 grid-template-columns:1fr;
 
 }
+
+.features-grid {
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas del mismo ancho */
+  grid-template-rows: repeat(2, auto);}
 
 }
 
