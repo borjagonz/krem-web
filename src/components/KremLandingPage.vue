@@ -44,10 +44,6 @@
       </div>
     </header>
 
-
-
-
-
     <!-- =========================
               HERO
     ========================== -->
@@ -104,13 +100,9 @@
 
           </p>
 
-
-
-
-
           <div class="hero-features">
 
-            <div class="feature">
+            <div class="feature1">
 
               <img
                 src="../assets/Artesanal.svg"
@@ -125,7 +117,7 @@
 
             </div>
 
-            <div class="feature">
+            <div class="feature1">
 
               <img
                 src="../assets/Premium.svg"
@@ -140,7 +132,7 @@
 
             </div>
 
-            <div class="feature">
+            <div class="feature1">
 
               <img
                 src="../assets/Ingredientes.svg"
@@ -157,7 +149,7 @@
 
             </div>
 
-            <div class="feature">
+            <div class="feature1">
 
               <img
                 src="../assets/Localizacion.svg"
@@ -181,10 +173,6 @@
       </div>
 
     </section>
-
-
-
-
 
     <!-- =========================
           ABOUT
@@ -240,12 +228,8 @@
 
         </div>
 
-
           <div class="line-vertical"></div>
           <div class="line2"></div>
-
-
-
 
         <div class="about-col">
 
@@ -256,31 +240,26 @@
           </h3>
           <div class="line"></div>
 
-          <ul>
+           <ul>
 
-            <li><span class="check">✔</span> Recetas propias y exclusivas</li>
+              <li><span class="check">✔</span> Recetas propias y exclusivas</li>
 
-            <li><span class="check">✔</span> Textura cremosa y sabor equilibrado</li>
+              <li><span class="check">✔</span> Textura cremosa y sabor equilibrado</li>
 
-            <li><span class="check">✔</span> Ingredientes naturales y de calidad</li>
+              <li><span class="check">✔</span> Ingredientes naturales y de calidad</li>
 
-            <li><span class="check">✔</span> Elaboración artesanal en Barcelona</li>
+              <li><span class="check">✔</span> Elaboración artesanal en Barcelona</li>
 
-            <li><span class="check">✔</span> Formato profesional y práctico</li>
+              <li><span class="check">✔</span> Formato profesional y práctico</li>
 
-            <li><span class="check">✔</span> Consistencia en cada unidad</li>
+              <li><span class="check">✔</span> Consistencia en cada unidad</li>
 
-            <li><span class="check">✔</span> Atención cercana y personalizada</li>
+              <li><span class="check">✔</span> Atención cercana y personalizada</li>
 
           </ul>
 
+          </div>
         </div>
-        </div>
-
-
-
-
-
 
         <div class="about-col professionals">
 
@@ -392,10 +371,7 @@
 
     </div>
 
-
           <div class="line2"></div>
-
-
 
     <!-- DERECHA -->
 
@@ -418,7 +394,6 @@
               </p>
             </div>
 
-
         </article>
 
         <article class="flavour">
@@ -431,7 +406,6 @@
               y absolutamente adictivo.
               </p>
             </div>
-
 
         </article>
 
@@ -446,7 +420,6 @@
                de dulzor.
             </p>
           </div>
-
 
         </article>
 
@@ -510,10 +483,6 @@
 
 </section>
 
-
-
-
-
 <!-- ==========================================
      FRANJA CARACTERÍSTICAS
 =========================================== -->
@@ -533,7 +502,6 @@
                 (0-5ºC). <br>
                 Vida útil: 7 días.
             </p>
-
 
         </article>
 
@@ -582,6 +550,98 @@
     </div>
 
 </section>
+
+<!--=========================================
+FOOTER
+==========================================-->
+
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+        <!-- IZQUIERDA -->
+
+        <div class="footer-about">
+
+            <h2>HABLEMOS</h2>
+
+            <p>
+                Queremos ser tu aliado en la mesa.
+                Contáctanos y descubre cómo Krem
+                puede formar parte de tu carta.
+            </p>
+
+        </div>
+
+
+
+
+
+        <!-- CENTRO -->
+
+        <div class="footer-contact">
+
+            <a href="tel:+34611123456">
+
+            <img src="../assets/Telefono.svg">
+
+                <span>+34 611 123 456</span>
+
+            </a>
+
+            <a href="mailto:horeca@kremcheesecake.com">
+
+            <img src="../assets/Email.svg">
+
+                <span>horeca@kremcheesecake.com</span>
+
+            </a>
+
+            <a
+                href="https://kremcheesecake.com"
+                target="_blank"
+            >
+
+            <img src="../assets/Web.svg">
+
+                <span>kremcheesecake.com</span>
+
+            </a>
+
+            <a
+                href="#"
+                target="_blank"
+            >
+
+            <img src="../assets/Instagram.svg">
+
+                <span>@krem.cheesecakes</span>
+
+            </a>
+
+        </div>
+
+
+
+
+
+        <!-- DERECHA -->
+
+        <div class="footer-signature">
+
+            <p>
+
+                Gracias por confiar
+                <br>
+                en lo artesanal.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
 
   </div>
 </template>
@@ -701,7 +761,7 @@ button{
 
   transition:.35s;
 
-    padding: 60px;
+  padding: 60px;
 
 }
 
@@ -763,6 +823,7 @@ button{
   padding: 12px 20px;
 
   border-radius:200px;
+
 }
 
 .menu-btn{
@@ -921,7 +982,7 @@ button{
 
 }
 
-.feature{
+.feature1{
 
   color:#eebfb9;
   justify-items: center;
@@ -931,7 +992,7 @@ button{
 
 }
 
-.feature img{
+.feature1 img{
 
   width: 35px;
   height: 40px;
@@ -939,13 +1000,14 @@ button{
 
 }
 
-.feature span{
+.feature1 span{
 
   font-size:.82rem;
 
   line-height:1.5;
 
   letter-spacing:1px;
+  color:#eebfb9;
 
 }
 
@@ -954,9 +1016,6 @@ button{
   position:relative;
 
 }
-
-
-
 
 /*==================================================
  ABOUT
@@ -1128,7 +1187,7 @@ FORMATOS
 
     background:white;
 
-    padding:70px 0;
+    padding:60px 0;
 
 }
 
@@ -1235,7 +1294,7 @@ FORMATOS
 
 .flavour img{
 
-    width:120px;
+    width:140px;
 
     margin:auto;
 
@@ -1340,18 +1399,18 @@ BASE GALLETA
 .base-card p{
 
   font-size: 14px;
-
+  margin: 0 auto;
     margin-top:12px;
 
     color:#333;
 
     line-height:1.7;
 
+    max-width: 300px;
+
+
+
 }
-
-
-
-
 
 /*=========================================
 FEATURES
@@ -1381,18 +1440,19 @@ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 .feature{
 
     text-align:center;
+    justify-content: center;
 
 }
 
 .feature img{
 
-    width:56px;
+    width:45px;
 
-    height:56px;
+    height:45px;
 
-    margin:auto;
+    margin:0 auto;
 
-    margin-bottom:22px;
+    margin-bottom:20px;
 
     opacity:.95;
 
@@ -1418,6 +1478,8 @@ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     opacity: .8;
 
     font-weight: 400;
+    max-width: 250px;
+    margin: 0 auto;
 
 
 }
@@ -1431,6 +1493,130 @@ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
 }
 
+
+/*=========================================
+FOOTER
+=========================================*/
+
+.footer{
+
+    background:#fffaf8;
+
+    padding: 60px;
+
+
+}
+
+.footer-grid{
+
+    display:grid;
+
+    grid-template-columns:1.5fr 1fr 1fr;
+
+    align-items:center;
+
+
+}
+
+.footer-about{
+
+    padding-right:60px;
+
+}
+
+.footer-contact{
+
+    border-left:1px solid rgba(176,55,36,.20);
+
+
+    padding:0 60px;
+
+}
+
+.footer-signature{
+
+    display:flex;
+    padding-left: 60px;
+
+}
+
+.footer h2{
+
+    color:#9f4638;
+
+    font-size:24px;
+
+    font-weight:600;
+
+    margin-bottom: 20px;
+}
+
+.footer-about p{
+
+    color:#555;
+
+    line-height:1.5;
+    font-size: 16px;
+
+  max-width: 500px;
+}
+
+.footer-contact a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    margin-bottom:12px;
+
+    color:#333;
+
+    transition:.25s;
+
+    font-size: 16px;
+    font-weight: 500;
+
+}
+
+.footer-contact a:hover{
+
+    color:#a14638;
+
+}
+
+.footer-contact i{
+
+    width:22px;
+
+    color:#a14638;
+
+    font-size:18px;
+
+}
+
+.footer-signature p{
+
+  font-style:italic;
+
+  color: #b03724;
+
+  font-size: 24px;
+
+  font-family: "Oooh Baby", cursive;
+  font-weight: 600;
+  font-style: normal;
+
+  letter-spacing: 0.8px;
+
+  text-align: left;
+
+}
+
+.footer img {
+  width: 20px;
+}
 
 /*==================================================
  RESPONSIVE
@@ -1599,6 +1785,44 @@ grid-template-columns:1fr;
     text-align: center;
 
 }
+
+.footer-grid{
+
+    grid-template-columns:1fr;
+
+    gap:55px;
+
+}
+
+.footer-about{
+
+    padding-right:0;
+
+}
+
+.footer-contact{
+
+    border-left:none;
+    border-right:none;
+
+    border-top:1px solid rgba(176,55,36,.20);
+    border-bottom:1px solid rgba(176,55,36,.20);
+
+    padding:40px 0;
+
+}
+
+.footer-signature{
+
+    justify-content:center;
+
+}
+
+.footer-signature p{
+
+    text-align:center;
+
+}
 }
 
 @media(max-width:768px){
@@ -1724,6 +1948,14 @@ height:100px;
 
 }
 
+.formats-left h2{
+  font-size: 20px;
+}
+
+.flavours h2 {
+  font-size: 20px;
+}
+
 .formats-left,
 .flavours{
 
@@ -1755,14 +1987,14 @@ height:100px;
     justify-content: center;
   width: 100%;
     gap:45px;
+    margin: 40px 0px 60px;
 
 }
 
 .base-grid{
 
     grid-template-columns:1fr;
-
-    gap:70px;
+    gap:60px;
 
 }
 
@@ -1772,6 +2004,14 @@ height:100px;
 
     gap:50px;
 
+}
+
+.base-section {
+  padding: 40px 0px;
+}
+
+.base-section h2 {
+  font-size: 20px;
 }
 
 }
@@ -1868,8 +2108,6 @@ font-size:42px;
 
 }
 
-
-
 .topbar-inner{
 
 height:75px;
@@ -1907,6 +2145,18 @@ height:75px;
         grid-template-columns:1fr;
 
     }
+
+    .formats-left {
+      padding: 30px;
+    }
+
+    .flavours {
+      padding: 30px;
+    }
+
+    .base-section {
+  padding: 30px 0px;
+}
 
 }
 
@@ -1966,11 +2216,11 @@ font-size:36px;
     width: 100px;
   }
 
-    .topbar-inner{
+  .topbar-inner{
 
-height:50px;
+  height:50px;
 
-}
+  }
 
   .contact-btn {
     font-size: 10px;
@@ -1991,12 +2241,12 @@ height:50px;
     gap: 10px;
   }
 
-  .feature img {
+  .feature1 img {
     width: 25px;
     margin: 0;
   }
 
-  .feature span {
+  .feature1 span {
     font-size: .52rem;
     line-height: 1; 
   }
@@ -2005,8 +2255,10 @@ height:50px;
     width: 100%;
   }
 
+  .feature img{
+    margin-bottom: 10px;
+  }
+
 }
-
-
 
 </style>
