@@ -24,25 +24,70 @@
         <div class="topbar-actions">
 
           <a
-            href="#contact"
+            href="#footer"
             class="contact-btn"
           >
             CONTACTA
           </a>
 
-          <button
-            class="menu-btn"
-            aria-label="Abrir menú"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+<button
+  class="menu-btn"
+  :class="{ active: menuOpen }"
+  @click="menuOpen = !menuOpen"
+  aria-label="Abrir menú"
+>
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
 
         </div>
 
       </div>
     </header>
+
+<div
+  class="menu-overlay"
+  :class="{ active: menuOpen }"
+  @click.self="menuOpen = false"
+>
+
+  <aside
+    class="menu-panel"
+    :class="{ active: menuOpen }"
+  >
+
+    <button
+      class="menu-close"
+      @click="menuOpen = false"
+      aria-label="Cerrar menú"
+    >
+      ✕
+    </button>
+
+    <nav class="menu-links">
+
+      <a href="#about" @click="menuOpen = false">
+        Sobre Nosotros
+      </a>
+
+      <a href="#formats" @click="menuOpen = false">
+        Formatos y Sabores
+      </a>
+
+      <a href="#base" @click="menuOpen = false">
+        Base del Cheesecake
+      </a>
+
+      <a href="#location" @click="menuOpen = false">
+        Localización
+      </a>
+
+    </nav>
+
+  </aside>
+
+</div>
 
     <!-- =========================
               HERO
@@ -293,7 +338,7 @@
       FORMATOS + SABORES
 ========================= -->
 
-<section class="formats">
+<section id="formats" class="formats">
 
   <div class="container formats-grid">
 
@@ -435,7 +480,7 @@
      CON O SIN BASE DE GALLETA
 =========================================== -->
 
-<section class="base-section">
+<section id="base" class="base-section">
 
     <div class="container">
 
@@ -555,7 +600,7 @@
 FOOTER
 ==========================================-->
 
-<footer class="footer">
+<footer id="footer" class="footer">
 
     <div class="container footer-grid">
 
@@ -643,30 +688,37 @@ FOOTER
 
 </footer>
 
+<div class="footer2">
+  <div class="empresa">
+    <p>KREM BY DOLCE INVESTMENTS SL</p>
+  <P>© 2026 KREM. Todos los derechos reservados.</P>
+  </div>
+  <div class="legal">
+    <a href="">Aviso Legal y Política de Privacidad</a>
+    <a href="">Política de Cookies</a>
+  </div>
+
+</div>
+
   </div>
 </template>
 
 <script setup>
-import { ref,onMounted,onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
-const isScrolled=ref(false)
+const isScrolled = ref(false)
+const menuOpen = ref(false)
 
-const handleScroll=()=>{
-
-  isScrolled.value=window.scrollY>30
-
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 30
 }
 
-onMounted(()=>{
-
-  window.addEventListener("scroll",handleScroll)
-
+onMounted(() => {
+  window.addEventListener("scroll", handleScroll)
 })
 
-onUnmounted(()=>{
-
-  window.removeEventListener("scroll",handleScroll)
-
+onUnmounted(() => {
+  window.removeEventListener("scroll", handleScroll)
 })
 </script>
 
@@ -767,9 +819,9 @@ button{
 
 .topbar.scrolled{
 
-  backdrop-filter:blur(16px);
+  backdrop-filter:blur(12px);
 
-  background:rgba(0,0,0, 0.35);
+  background:rgba(81, 0, 0, 0.4);
 
   padding: 30px 60px;
 
@@ -823,7 +875,12 @@ button{
   padding: 12px 20px;
 
   border-radius:200px;
+  transition: .3s ease-in-out;
 
+}
+
+.contact-btn:hover{
+  background-color: #973e30;
 }
 
 .menu-btn{
@@ -844,6 +901,10 @@ button{
 
 }
 
+.menu-btn:hover{
+  background-color: #973e30;
+}
+
 .menu-btn span{
 
   display:block;
@@ -852,6 +913,113 @@ button{
   height:3px;
 
   background:#973e30;
+
+}
+
+.menu-overlay{
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.28);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.35s;
+
+    z-index:9998;
+
+}
+
+.menu-overlay.active{
+
+    opacity:1;
+    visibility:visible;
+
+}
+
+.menu-panel{
+
+    position:absolute;
+
+    top:0;
+    right:0;
+
+    width:420px;
+    max-width:90vw;
+    height:100%;
+
+    background:#eebfb9;
+
+    transform:translateX(100%);
+
+    transition:.4s cubic-bezier(.22,.61,.36,1);
+
+    display:flex;
+    flex-direction:column;
+
+    padding:40px;
+
+}
+
+.menu-panel.active{
+
+    transform:translateX(0);
+
+}
+
+.menu-close{
+
+    align-self:flex-end;
+
+    border:none;
+    background:none;
+
+    cursor:pointer;
+
+    font-size:34px;
+
+    color:#973e30;
+
+    transition:.25s;
+
+}
+
+.menu-close:hover{
+
+    transform:rotate(90deg);
+
+}
+
+.menu-links{
+
+    margin-top:70px;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:32px;
+
+}
+
+.menu-links a{
+
+    text-decoration:none;
+
+    font-family:"Abril Fatface", serif;
+
+    font-size:2rem;
+
+    color:#973e30;
+
+    transition:.25s;
+
+}
+
+.menu-links a:hover{
+
+    transform:translateX(8px);
 
 }
 
@@ -1618,6 +1786,27 @@ FOOTER
   width: 20px;
 }
 
+.footer2 {
+  background-color: #973e30;
+  color: #eebfb9;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  gap: 30px;
+}
+
+.legal {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.footer2 a:hover{
+  color: white;
+  transition: .3s ease-in-out;
+}
+
 /*==================================================
  RESPONSIVE
 ==================================================*/
@@ -2334,19 +2523,19 @@ font-size:36px;
     line-height:1.45;
   }
 
-  .hero-features{
-    margin-top:30px;
-    gap:18px;
+  .hero-features {
+    width: 100%;
+    margin-top: 20px;
   }
 
-  .feature1 img{
-    width:28px;
-    height:32px;
+  .feature1 img {
+    width: 25px;
+    margin: 0;
   }
 
-  .feature1 span{
-    font-size:.72rem;
-    line-height:1.3;
+  .feature1 span {
+    font-size: .52rem;
+    line-height: 1; 
   }
 
 }
