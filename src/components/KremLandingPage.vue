@@ -688,6 +688,55 @@ FOOTER
 
 </footer>
 
+<!-- ==========================================
+     LOCALIZACIÓN
+========================================== -->
+
+<section id="location" class="location">
+
+  <div class="container location-grid">
+
+    <!-- INFORMACIÓN -->
+    <div class="location-info">
+
+      <h2>LOCALIZACIÓN</h2>
+
+      <div class="line"></div>
+
+      <p class="location-intro">
+        Estamos en el corazón de Gràcia, Barcelona.
+        Ven a conocernos o ponte en contacto con nosotros
+        para descubrir todo lo que Krem puede ofrecerte.
+      </p>
+
+      <div class="location-address">
+
+        <div>
+          <span>ENCUÉNTRANOS EN</span>
+          <p>
+            Plaça de la Vila de Gràcia, 5<br>
+            Gràcia, 08012 Barcelona
+          </p>
+        </div>
+
+      </div>
+
+<a class="location-button" href="https://www.google.com/maps/search/?api=1&query=Krem+Cheesecake+Barcelona" target="_blank" rel="noopener noreferrer" > CÓMO LLEGAR </a>
+
+    </div>
+
+
+    <!-- GOOGLE MAPS -->
+    <div class="location-map">
+
+<iframe src="https://www.google.com/maps?q=Krem+Cheesecake+Barcelona&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Krem Cheesecake Barcelona" ></iframe>
+
+    </div>
+
+  </div>
+
+</section>
+
 <div class="footer2">
   <div class="empresa">
     <p>KREM BY DOLCE INVESTMENTS SL</p>
@@ -899,10 +948,13 @@ button{
   align-items:center;     /* Centra horizontalmente */
   gap:4px;
 
+  transition: 0.3s ease-in-out;
+
 }
 
 .menu-btn:hover{
-  background-color: #973e30;
+  background-color: white;
+
 }
 
 .menu-btn span{
@@ -1007,9 +1059,8 @@ button{
 
     text-decoration:none;
 
-    font-family:"Abril Fatface", serif;
-
-    font-size:2rem;
+    font-size:24px;
+    font-weight: 600;
 
     color:#973e30;
 
@@ -1808,6 +1859,202 @@ FOOTER
 }
 
 /*==================================================
+ LOCALIZACIÓN
+==================================================*/
+
+.location{
+
+  background:#f8eeec;
+
+  padding:80px 0;
+
+}
+
+
+.location-grid{
+
+  display:grid;
+
+  grid-template-columns:0.8fr 1.2fr;
+
+  gap:70px;
+
+  align-items:stretch;
+
+  padding-right:60px;
+
+}
+
+
+
+.location-info{
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  padding:20px 40px 20px 60px;
+
+}
+
+
+.location-info h2{
+
+  color:#9f4638;
+
+  font-size:24px;
+
+  font-weight:600;
+
+  margin-bottom:20px;
+
+}
+
+
+.location-info .line{
+
+  width:80px;
+
+  height:1px;
+
+  background:#b03724;
+
+  margin:0 0 30px 0;
+
+}
+
+
+.location-intro{
+
+  color:#555;
+
+  font-size:16px;
+
+  line-height:1.7;
+
+  max-width:450px;
+
+  margin-bottom:40px;
+
+}
+
+
+.location-address{
+
+  display:flex;
+
+  align-items:flex-start;
+
+  gap:18px;
+
+  margin-bottom:35px;
+
+}
+
+
+.location-address img{
+
+  width:28px;
+
+  height:32px;
+
+  object-fit:contain;
+
+  margin-top:2px;
+
+}
+
+
+.location-address span{
+
+  display:block;
+
+  color:#9f4638;
+
+  font-size:12px;
+
+  font-weight:600;
+
+  letter-spacing:1.5px;
+
+  margin-bottom:8px;
+
+}
+
+
+.location-address p{
+
+  color:#333;
+
+  font-size:16px;
+
+  line-height:1.6;
+
+}
+
+
+.location-button{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  width:max-content;
+
+  padding:12px 22px;
+
+  border:1px solid #973e30;
+
+  border-radius:200px;
+
+  color:#973e30;
+
+  font-size:13px;
+
+  font-weight:600;
+
+  letter-spacing:1px;
+
+  transition:.3s ease-in-out;
+
+}
+
+
+.location-button:hover{
+
+  background:#973e30;
+
+  color:#f8eeec;
+
+}
+
+
+.location-map{
+
+  min-height:450px;
+
+  overflow:hidden;
+
+}
+
+
+.location-map iframe{
+
+  display:block;
+
+  width:100%;
+
+  height:100%;
+
+  min-height:450px;
+
+}
+
+/*==================================================
  RESPONSIVE
 ==================================================*/
 
@@ -2012,6 +2259,38 @@ grid-template-columns:1fr;
     text-align:center;
 
 }
+
+.location-grid{
+
+  grid-template-columns:1fr;
+
+  gap:40px;
+      padding-right:0;
+
+
+}
+
+
+.location-info{
+
+  padding:20px 40px;
+
+}
+
+
+.location-map{
+
+  min-height:400px;
+
+}
+
+
+.location-map iframe{
+
+  min-height:400px;
+
+}
+
 }
 
 @media(max-width:768px){
@@ -2345,6 +2624,50 @@ height:75px;
 
     .base-section {
   padding: 30px 0px;
+}
+
+.location{
+
+  padding:50px 0;
+
+}
+
+
+.location-info{
+
+  padding:10px 30px;
+
+}
+
+
+.location-info h2{
+
+  font-size:20px;
+
+}
+
+
+.location-intro{
+
+  font-size:14px;
+
+  margin-bottom:30px;
+
+}
+
+
+.location-address p{
+
+  font-size:14px;
+
+}
+
+
+.location-map,
+.location-map iframe{
+
+  min-height:350px;
+
 }
 
 }
