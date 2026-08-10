@@ -2251,6 +2251,7 @@ grid-template-columns:1fr;
 .footer-signature{
 
     justify-content:center;
+    padding: 0;
 
 }
 
@@ -2260,12 +2261,16 @@ grid-template-columns:1fr;
 
 }
 
+.location{
+  padding: 60px 0px;
+}
+
 .location-grid{
 
   grid-template-columns:1fr;
 
-  gap:40px;
-      padding-right:0;
+  gap:60px;
+  padding-right:0;
 
 
 }
@@ -2273,7 +2278,7 @@ grid-template-columns:1fr;
 
 .location-info{
 
-  padding:20px 40px;
+  padding:0px 60px;
 
 }
 
@@ -2301,6 +2306,10 @@ grid-template-columns:1fr;
 
 .topbar.scrolled {
   padding: 40px;
+}
+
+.container.topbar-inner {
+  height: 75px;
 }
 
 .hero {
@@ -2482,6 +2491,22 @@ height:100px;
   font-size: 20px;
 }
 
+.footer {
+  padding: 40px;
+}
+
+.location {
+  padding: 40px 0px;
+}
+
+.location-info {
+  padding: 0px 40px;
+}
+
+.location-grid {
+  gap: 40px;
+}
+
 }
 
 
@@ -2628,15 +2653,19 @@ height:75px;
 
 .location{
 
-  padding:50px 0;
+  padding:30px 0;
 
 }
 
 
 .location-info{
 
-  padding:10px 30px;
+  padding:0px 30px;
 
+}
+
+.location-grid {
+  gap: 30px;
 }
 
 
@@ -2704,7 +2733,7 @@ font-size:36px;
 
 .hero-features {
   flex-wrap: wrap;
-  width: 60%;
+  gap: 15px;
 }
 
 .format-card {
@@ -2716,12 +2745,23 @@ font-size:36px;
   margin: 0 auto;
 }
 
+  .feature1 img {
+    width: 25px;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+    .feature1 span {
+    font-size: .62rem;
+    line-height: 1; 
+  }
+
 }
 
 @media(max-width:400px){
 
   .hero h1 {
-    font-size: 30px;
+    font-size: 32px;
   }
 
   .topbar img {
@@ -2755,7 +2795,8 @@ font-size:36px;
 
   .feature1 img {
     width: 25px;
-    margin: 0;
+    margin: 0 auto;
+    justify-content: center;
   }
 
   .feature1 span {
@@ -2763,12 +2804,25 @@ font-size:36px;
     line-height: 1; 
   }
 
+
   .hero p {
     width: 100%;
   }
 
   .feature img{
     margin-bottom: 10px;
+  }
+
+  .footer {
+    padding: 30px;
+  }
+
+  .footer-grid {
+    gap: 30px;
+  }
+
+  .container.topbar-inner {
+    height: 50px;
   }
 
 }
@@ -2784,7 +2838,6 @@ font-size:36px;
   }
 
   .hero-copy h1{
-    font-size:46px;
     margin-bottom:16px;
   }
 
@@ -2803,7 +2856,6 @@ font-size:36px;
 
   .hero-features{
     margin-top:45px;
-    gap:25px;
   }
 
 }
@@ -2826,7 +2878,6 @@ font-size:36px;
   }
 
   .hero-copy h1{
-    font-size:40px;
     line-height:1.05;
     margin-bottom:12px;
   }
@@ -2884,7 +2935,6 @@ font-size:36px;
   }
 
   .hero-copy h1{
-    font-size:34px;
     margin-bottom:10px;
   }
 
@@ -2943,7 +2993,6 @@ font-size:36px;
     }
 
     .hero-copy h1{
-        font-size:28px;
         margin-bottom:8px;
         line-height:1;
     }
