@@ -2868,8 +2868,7 @@ font-size:36px;
   }
 
   .hero-copy{
-    justify-content:flex-start;
-    padding-top:120px;
+    padding-top:80px;
   }
 
   .hero-logo img{
@@ -2920,13 +2919,9 @@ font-size:36px;
     width: 120px;
   }
 
-  .hero{
-    padding:40px 60px;
-  }
 
   .hero-copy{
     padding-top: 20px;
-    justify-content: center;
   }
 
   .hero-logo img{
