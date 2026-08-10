@@ -2704,7 +2704,7 @@ height:75px;
 @media(max-width:500px){
 
   .topbar img {
-    width: 125px;
+    width: 110px;
   }
 
   .topbar-inner{
@@ -2892,7 +2892,6 @@ font-size:36px;
   }
 
   .hero-copy p{
-    font-size:.95rem;
     line-height:1.45;
   }
 
@@ -2915,9 +2914,6 @@ font-size:36px;
 
 @media (max-height:650px){
 
-  .topbar img {
-    width: 120px;
-  }
 
 
   .hero-copy{
@@ -2943,8 +2939,8 @@ font-size:36px;
   }
 
   .hero-copy p{
-    width:420px;
-    font-size:.9rem;
+    width:100%;
+    font-size:.7rem;
     line-height:1.35;
   }
 
