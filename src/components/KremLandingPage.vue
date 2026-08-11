@@ -743,8 +743,13 @@ FOOTER
   <P>© 2026 KREM. Todos los derechos reservados.</P>
   </div>
   <div class="legal">
-    <a href="">Aviso Legal y Política de Privacidad</a>
-    <a href="">Política de Cookies</a>
+    <router-link to="/legal">
+      Aviso Legal y Política de Privacidad
+    </router-link>
+
+    <router-link to="/legal">
+      Política de Cookies
+    </router-link>
   </div>
 
 </div>
@@ -1202,9 +1207,10 @@ button{
 }
 
 .feature1{
-
-  color:#eebfb9;
-  justify-items: center;
+  color: #eebfb9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   line-height: 1;
   font-weight: 500;
@@ -1215,22 +1221,19 @@ button{
 
   width: 35px;
   height: 40px;
-  margin-bottom: 10px;
-  justify-content: center;
-  justify-items: center;
-  align-content: center;
-  align-items: center;
+  object-fit: contain;
+  margin: 0 auto 10px;
+  display: block;
 
 }
 
 .feature1 span{
 
-  font-size:.82rem;
-
-  line-height:1.5;
-
-  letter-spacing:1px;
-  color:#eebfb9;
+  display: block;
+  font-size: .82rem;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  color: #eebfb9;
 
 }
 
@@ -2750,9 +2753,9 @@ font-size:36px;
 }
 
   .feature1 img {
-    width: 25px;
-    margin: 0 auto;
-    justify-content: center;
+  width: 25px;
+  height: 40px;
+  margin: 0 auto 8px;
   }
 
     .feature1 span {
@@ -2905,8 +2908,9 @@ font-size:36px;
   }
 
   .feature1 img {
-    width: 25px;
-    margin: 0;
+  width: 25px;
+  height: 40px;
+  margin: 0 auto 8px;
   }
 
   .feature1 span {
