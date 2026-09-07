@@ -596,6 +596,21 @@
 
 </section>
 
+
+<section class="clientes">
+  <div class="container">
+      <h2>NUESTROS CLIENTES</h2>
+              <div class="title-line"></div>
+
+  <div class="clientes-img">
+    <img src="../assets/(logocliente).png" alt="" class="cliente-img">
+    <img src="../assets/(logocliente).png" alt="" class="cliente-img">
+    <img src="../assets/(logocliente).png" alt="" class="cliente-img">
+    <img src="../assets/(logocliente).png" alt="" class="cliente-img">
+  </div>
+  </div>
+
+</section>
 <!--=========================================
 FOOTER
 ==========================================-->
@@ -1094,7 +1109,7 @@ button{
 
   overflow:hidden;
 
-  background-image: url('../assets/Krem-Hero.jpg');
+  background-image: url('../assets/Krem-Hero-Ok.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1719,6 +1734,42 @@ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
 }
 
+/*=========================================
+CLIENTES
+=========================================*/
+
+.clientes {
+  background-color: #f8eeec;
+
+  padding: 60px;
+}
+
+.clientes h2 {
+  color:#9f4638;
+  text-align: center;
+
+  font-size:24px;
+
+  font-weight:600;
+
+  margin-bottom: 20px;
+}
+
+.clientes-img {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.cliente-img {
+  opacity: 0.3;
+  height: 200px;
+  min-width: 200px;
+  margin: 0 auto
+}
 
 /*=========================================
 FOOTER
