@@ -15,13 +15,15 @@
 
           <!-- Sustituir -->
           <img
-            src="../assets/logo-krem.jpg"
+            src="../assets/logo-krem-new.png"
             alt="Krem"
           >
 
         </a>
 
-        <div class="topbar-actions">
+        <div class="topbar-actions"
+        :class="{ scrolled: isScrolled }"
+>
 
           <a
             href="#footer"
@@ -112,19 +114,10 @@
 
           </div>
 
-          <h1>
-
-            RESTAURACIÓN
-            <br>
-            PROFESIONAL
-
-          </h1>
-
-          <div class="hero-divider"></div>
 
           <h2>
 
-            CHEESECAKES ARTESANALES
+            SIGNATURE CHEESCAKES
             <br>
             PARA RESTAURANTES Y HOTELES
 
@@ -145,7 +138,43 @@
 
           </p>
 
+          <a
+  class="hero-reviews"
+  href="https://www.google.com/maps/search/?api=1&query=Krem+Cheesecake+Barcelona"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Ver reseñas de Krem en Google Maps"
+>
+  <div class="reviews-stars">
+    <span>★</span>
+    <span>★</span>
+    <span>★</span>
+    <span>★</span>
+    <span>★</span>
+  </div>
+
+  <div class="reviews-info">
+    <strong>5.0</strong>
+    <span>Reseñas de Google</span>
+  </div>
+</a>
+
           <div class="hero-features">
+
+            <div class="feature1">
+
+              <img
+                src="../assets/Premium.svg"
+                alt=""
+              >
+
+              <span>
+
+                CHEESCAKES <br> DE AUTOR
+
+              </span>
+
+            </div>
 
             <div class="feature1">
 
@@ -162,20 +191,6 @@
 
             </div>
 
-            <div class="feature1">
-
-              <img
-                src="../assets/Premium.svg"
-                alt=""
-              >
-
-              <span>
-
-                CALIDAD <br> PREMIUM
-
-              </span>
-
-            </div>
 
             <div class="feature1">
 
@@ -235,8 +250,8 @@
 
           <h3>
 
-            KREM RESTAURACIÓN <br>
-            PROFESIONAL
+            KREM RESTAURACIÓ <br>
+            PROFESSIONAL
 
           </h3>
 
@@ -250,8 +265,8 @@
 
           <p>
 
-            Krem es la marca de cheesecakes artesanas
-            especializada en el canal HORECA.
+            Somos la marca de cheesecakes especializada en el canal HORECA. 
+
 
             Trabajamos para restaurantes,
             hoteles y cafeterías que buscan
@@ -273,44 +288,15 @@
 
         </div>
 
-          <div class="line-vertical"></div>
-          <div class="line2"></div>
 
-        <div class="about-col">
 
-          <h3>
-
-            ¿POR QUÉ KREM?
-
-          </h3>
-          <div class="line"></div>
-
-           <ul>
-
-              <li><span class="check">✔</span> Recetas propias y exclusivas</li>
-
-              <li><span class="check">✔</span> Textura cremosa y sabor equilibrado</li>
-
-              <li><span class="check">✔</span> Ingredientes naturales y de calidad</li>
-
-              <li><span class="check">✔</span> Elaboración artesanal en Barcelona</li>
-
-              <li><span class="check">✔</span> Formato profesional y práctico</li>
-
-              <li><span class="check">✔</span> Consistencia en cada unidad</li>
-
-              <li><span class="check">✔</span> Atención cercana y personalizada</li>
-
-          </ul>
-
-          </div>
         </div>
 
         <div class="about-col professionals">
 
           <h3>
 
-            HECHO PARA <br>
+            CREADA PARA <br>
             PROFESIONALES
 
           </h3>
@@ -371,7 +357,7 @@
 
               <li>· Sugerido 10 porciones</li>
 
-              <li>· Base de galleta crujiente</li>
+              <li>· Con obdin base de galleta</li>
 
               <li>· Ideal para carta de postres y celebraciones</li>
 
@@ -396,7 +382,7 @@
 
             <ul>
 
-              <li>· Más pequeño</li>
+              <li>· Ø 19 cm</li>
 
               <li>· Sin base de galleta</li>
 
@@ -404,7 +390,9 @@
 
               <li>· Sugerido 36 porciones</li>
 
-              <li>· Ideal para menú degustación</li>
+              <li>· Congelada para almacenar</li>
+
+              <li>· Ideal para carta de Menú</li>
 
             </ul>
 
@@ -445,10 +433,22 @@
 
           <img src="../assets/Lotus-DulceLeche.jpg">
             <div class="flavour-text">          
-              <h3>LOTUS<br>DULCE DE LECHE</h3>
+              <h3>LOTUS</h3>
               <p>
               Suave, especiado
               y absolutamente adictivo.
+              </p>
+            </div>
+
+        </article>
+
+                <article class="flavour">
+
+          <img src="../assets/Lotus-DulceLeche.jpg">
+            <div class="flavour-text">          
+              <h3>DULCE DE LECHE</h3>
+              <p>
+              Cremoso, caramelizado y deliciosamente irresistible.
               </p>
             </div>
 
@@ -623,7 +623,7 @@ FOOTER
 
         <div class="footer-about">
 
-            <h2>HABLEMOS</h2>
+            <h2>AGENDA UNA DEGUSTACIÓN PROFESIONAL</h2>
 
             <p>
                 Queremos ser tu aliado en la mesa.
@@ -653,7 +653,7 @@ FOOTER
 
             <img src="../assets/Email.svg">
 
-                <span>horeca@kremcheesecake.com</span>
+                <span>krem@krembcn.com</span>
 
             </a>
 
@@ -675,7 +675,7 @@ FOOTER
 
             <img src="../assets/Instagram.svg">
 
-                <span>@krem.cheesecakes</span>
+                <span>@wearekrem</span>
 
             </a>
 
@@ -906,7 +906,7 @@ button{
 
 .logo{
 
-  width:200px;
+  width:240px;
   transition: 0.8s ;
 
 }
@@ -926,8 +926,15 @@ button{
   display:flex;
   align-items:center;
   gap:20px;
+  padding-bottom: 60px;
+  transition: 0.5s ease-in-out;
 
 }
+
+.topbar-actions.scrolled {
+  padding-bottom: 0px;
+}
+
 
 .contact-btn{
 
@@ -1022,7 +1029,7 @@ button{
     max-width:90vw;
     height:100%;
 
-    background:#eebfb9;
+  background:#973e30;
 
     transform:translateX(100%);
 
@@ -1052,7 +1059,7 @@ button{
 
     font-size:34px;
 
-    color:#973e30;
+    color:#eebfb9;
 
     transition:.25s;
 
@@ -1082,7 +1089,7 @@ button{
     font-size:24px;
     font-weight: 600;
 
-    color:#973e30;
+    color:#eebfb9;
 
     transition:.25s;
 
@@ -1109,7 +1116,7 @@ button{
 
   overflow:hidden;
 
-  background-image: url('../assets/Krem-Hero-Ok.jpg');
+  background-image: url('../assets/Krem-Hero-NEW.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1147,8 +1154,6 @@ button{
 
   color:white;
 
-  padding-top:50px;
-
 }
 
 
@@ -1181,9 +1186,9 @@ button{
 
 .hero-copy h2{
 
-  color: #eebfb9;
+  color: #ffffff;
 
-  font-size:24px;
+  font-size:28px;
 
   font-weight:400;
 
@@ -1197,15 +1202,59 @@ button{
 
 .hero-copy p{
 
-  width:450px;
+  width:420px;
 
-  color:rgba(255, 214, 214, 0.8);
+  color:rgba(255, 255, 255, 0.8);
 
   line-height:1.7;
 
   font-size:1rem;
+  margin-bottom:25px;
 
 
+}
+
+.hero-reviews {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  width: max-content;
+  color: #ffffff;
+  transition: .3s ease-in-out;
+  border: solid 1px #973e30;
+  padding: 15px 25px;
+  border-radius: 50px;
+}
+
+.hero-reviews:hover {
+  transform: translateY(-2px);
+  opacity: .85;
+}
+
+.reviews-stars {
+  display: flex;
+  gap: 3px;
+  color: #f4b942;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.reviews-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  line-height: 1;
+}
+
+.reviews-info strong {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.reviews-info span {
+  font-size: 11px;
+  color: rgba(255, 255, 255, .75);
+  letter-spacing: .5px;
 }
 
 .hero-features{
@@ -1214,10 +1263,13 @@ button{
 
   gap:35px;
 
-  margin-top: 75px;
+  margin-top: 125px;
 
   margin-left: 0;
 
+  position: absolute;
+
+  bottom: 120px;
 
 }
 
@@ -1248,7 +1300,7 @@ button{
   font-size: .82rem;
   line-height: 1.5;
   letter-spacing: 1px;
-  color: #eebfb9;
+  color:rgba(255, 255, 255, 0.8);
 
 }
 
@@ -1272,19 +1324,10 @@ button{
 .about-grid{
 
     display:grid;
-    grid-template-columns:2fr 0.8fr;
+    grid-template-columns:1.5fr 1fr;
 }
 
 
-.about-left{
-
-    display:grid;
-    grid-template-columns:1fr 2px 1fr;
-
-    align-items:stretch;
-
-
-}
 
 .about-col{
   padding-left: 60px;
@@ -1306,11 +1349,16 @@ button{
 
 }
 
+.about-col p {
+  max-width: 650px;
+}
+
 .about-col span{
 
   display:block;
   font-weight: 400;
   font-size: 20px;
+  max-width: 500px;
 
 }
 
@@ -1436,7 +1484,7 @@ FORMATOS
 
     display:grid;
 
-    grid-template-columns:1.25fr 1fr;
+    grid-template-columns:1fr 1.5fr;
 
 }
 
@@ -1451,6 +1499,7 @@ FORMATOS
 .flavours{
 
   padding: 0px 60px;
+  
 
 }
 
@@ -1470,7 +1519,6 @@ FORMATOS
 
     display:grid;
 
-    grid-template-columns:1fr 1fr;
 
     gap: 40px;
 
@@ -1519,11 +1567,11 @@ FORMATOS
 
     display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(4,1fr);
 
     gap:25px;
 
-    margin-top:40px;
+  margin-top: 80px;
 
 }
 
@@ -2149,6 +2197,7 @@ FOOTER
 
 .flavours-grid{
 
+  margin-top: 40px;
   display:flex;
   flex-wrap: wrap;
 
@@ -2210,11 +2259,7 @@ right:auto;
 
 }
 
-.about-grid{
 
-grid-template-columns:1fr;
-
-}
 
 .features-grid {
   grid-template-columns: repeat(2, 1fr); /* Dos columnas del mismo ancho */
@@ -2231,9 +2276,9 @@ grid-template-columns:1fr;
 
   background:linear-gradient(
       90deg,
-      rgba(0,0,0, 1) 0%,
-      rgba(0,0,0,.9) 20%,
-      rgba(0,0,0,.8) 40%,
+      rgba(0,0,0, .9) 0%,
+      rgba(0,0,0,.8) 20%,
+      rgba(0,0,0,.6) 40%,
       rgba(0,0,0,.4) 60%,
       rgba(0,0,0, 0) 100%
   );
@@ -2268,7 +2313,7 @@ grid-template-columns:1fr;
 
 .flavours-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .flavour {
@@ -2358,8 +2403,12 @@ grid-template-columns:1fr;
 
 @media(max-width:768px){
 
+.logo {
+  width: 160px;
+}
+
 .topbar {
-  padding: 40px;
+  padding: 60px 40px;
 }
 
 .topbar.scrolled {
@@ -2372,6 +2421,8 @@ grid-template-columns:1fr;
 
 .hero {
   padding: 40px;
+  background-image: url('../assets/Krem-Hero-NEW-responsive.jpg');
+
 }
 
 .hero-copy h1{
@@ -2379,6 +2430,7 @@ grid-template-columns:1fr;
 font-size:42px;
 
 }
+
 
 .hero-copy h2 {
   font-size: 20px
@@ -2389,6 +2441,12 @@ font-size:42px;
   font-size: 14px;
 
   width:300px;
+
+}
+
+.hero-features{
+
+  bottom: 90px;
 
 }
 
@@ -2414,6 +2472,16 @@ font-size:42px;
 .topbar-inner{
 
 height:100px;
+
+}
+
+.topbar-actions {
+  padding-bottom: 0px;
+}
+
+.about-grid{
+
+grid-template-columns:1fr;
 
 }
 
@@ -2472,7 +2540,7 @@ height:100px;
 
 .formats-grid{
 
-    grid-template-columns:1fr;
+  grid-template-columns: repeat(4, 1fr);
 
 }
 
@@ -2518,7 +2586,7 @@ height:100px;
 
 .flavours-grid{
 
-    grid-template-columns:1fr;
+  grid-template-columns: repeat(2, 1fr);
     justify-content: center;
   width: 100%;
     gap:45px;
@@ -2573,7 +2641,7 @@ height:100px;
 @media(max-width:600px){
 
   .topbar {
-    padding: 30px;
+    padding: 40px 30px;
   }
 
   .topbar.scrolled{
@@ -2581,7 +2649,7 @@ height:100px;
   }
 
     .topbar img {
-    width: 150px;
+    width: 140px;
   }
 
   .contact-btn {
@@ -2626,10 +2694,10 @@ font-size:42px;
 
   background:linear-gradient(
       90deg,
-      rgba(0,0,0, 1) 0%,
-      rgba(0,0,0,.9) 20%,
-      rgba(0,0,0,.8) 40%,
-      rgba(0,0,0,.6) 60%,
+      rgba(0,0,0, .85) 0%,
+      rgba(0,0,0,.75) 20%,
+      rgba(0,0,0,.65) 40%,
+      rgba(0,0,0,.5) 60%,
       rgba(0,0,0,.3) 100%
   );
 
@@ -2637,8 +2705,10 @@ font-size:42px;
 
 }
 
-.hero-features {
-  margin-top: 50px;
+.hero-features{
+
+  bottom: 80px;
+
 }
 
 .feature img{
@@ -2696,6 +2766,8 @@ height:75px;
         grid-template-columns:1fr;
 
     }
+
+    
 
     .formats-left {
       padding: 30px;
@@ -2757,6 +2829,17 @@ height:75px;
 
 }
 
+  .feature1 img {
+  width: 30px;
+  height: 40px;
+  margin: 0 auto 8px;
+  }
+
+    .feature1 span {
+    font-size: .62rem;
+    line-height: 1.4; 
+  }
+
 }
 
 @media(max-width:500px){
@@ -2789,9 +2872,12 @@ font-size:36px;
 
 }
 
+
+
 .hero-features {
   flex-wrap: wrap;
   gap: 15px;
+  bottom: 70px;
 }
 
 .format-card {
@@ -2810,8 +2896,13 @@ font-size:36px;
   }
 
     .feature1 span {
-    font-size: .62rem;
-    line-height: 1; 
+    font-size: .56rem;
+    line-height: 1.4; 
+  }
+
+  .flavours-grid {
+      grid-template-columns:1fr;
+
   }
 
 }
@@ -2822,8 +2913,12 @@ font-size:36px;
     font-size: 32px;
   }
 
+  .hero p {
+    max-width: 250px;
+  }
+
   .topbar img {
-    width: 100px;
+    width: 110px;
   }
 
   .topbar-inner{
@@ -2841,15 +2936,14 @@ font-size:36px;
     height: 40px;
   }
 
-  .hero-copy {
-    padding-top: 80px;
-  }
 
-  .hero-features {
-    width: 100%;
-    margin-top: 20px;
-    gap: 10px;
-  }
+
+.hero-features {
+  flex-wrap: wrap;
+  gap: 10px;
+  bottom: 60px;
+}
+
 
   .feature1 img {
     width: 25px;
@@ -2859,7 +2953,7 @@ font-size:36px;
 
   .feature1 span {
     font-size: .52rem;
-    line-height: 1; 
+    line-height: 1.4; 
   }
 
 
@@ -2887,9 +2981,7 @@ font-size:36px;
 
 @media (max-height: 900px){
 
-  .hero-copy{
-    padding-top:20px;
-  }
+
 
   .hero-logo img{
     width:170px;
@@ -2925,9 +3017,7 @@ font-size:36px;
     width:170px;
   }
 
-  .hero-copy{
-    padding-top:80px;
-  }
+
 
   .hero-logo img{
     width:140px;
