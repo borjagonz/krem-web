@@ -2633,6 +2633,11 @@ grid-template-columns:1fr;
   gap: 40px;
 }
 
+  .hero-reviews {
+  scale: 0.95;
+  transform-origin: left center; 
+}
+
 }
 
 
@@ -2905,6 +2910,11 @@ font-size:36px;
 
   }
 
+  .hero-reviews {
+  scale: 0.9;
+  transform-origin: left center; 
+}
+
 }
 
 @media(max-width:400px){
@@ -2943,6 +2953,12 @@ font-size:36px;
   gap: 10px;
   bottom: 60px;
 }
+
+.hero-reviews {
+  scale: 0.85;
+  transform-origin: left center; 
+}
+
 
 
   .feature1 img {
