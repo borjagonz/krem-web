@@ -81,6 +81,10 @@
         Base del Cheesecake
       </a>
 
+            <a href="#footer" @click="menuOpen = false">
+        Contacto
+      </a>
+
       <a href="#location" @click="menuOpen = false">
         Localización
       </a>
@@ -877,7 +881,7 @@ button{
 
   transition:.35s;
 
-  padding: 60px;
+  padding: 0px 60px;
 
 }
 
@@ -887,7 +891,7 @@ button{
 
   background:rgba(81, 0, 0, 0.4);
 
-  padding: 30px 60px;
+  padding: 0px 60px 30px;
 
 }
 
@@ -901,8 +905,9 @@ button{
 
 .logo{
 
-  width:200px;
+  width:180px;
   transition: 0.8s ;
+
 
 }
 
@@ -921,13 +926,13 @@ button{
   display:flex;
   align-items:center;
   gap:20px;
-  padding-bottom: 60px;
+  padding-bottom: 0px;
   transition: 0.5s ease-in-out;
 
 }
 
 .topbar-actions.scrolled {
-  padding-bottom: 0px;
+  padding-top: 25px;
 }
 
 
@@ -1116,7 +1121,7 @@ button{
   background-position: center;
   background-repeat: no-repeat;
 
-  padding: 60px;
+  padding: 0px 60px;
 
 }
 
@@ -1271,7 +1276,7 @@ button{
 
   position: absolute;
 
-  bottom: 120px;
+  bottom: 60px;
 
 }
 
@@ -2434,15 +2439,15 @@ grid-template-columns:1fr;
 }
 
 .topbar {
-  padding: 60px 40px;
+  padding: 0px 40px;
 }
 
 .topbar.scrolled {
-  padding: 40px;
+  padding: 0px 40px 30px;
 }
 
 .container.topbar-inner {
-  height: 75px;
+  height: auto;
 }
 
 .hero {
@@ -2453,7 +2458,7 @@ grid-template-columns:1fr;
 
 .hero-copy h1{
 
-font-size:42px;
+font-size:36px;
 
 }
 
@@ -2671,13 +2676,18 @@ grid-template-columns:1fr;
 
 @media(max-width:600px){
 
+  .contact-btn {
+    display: none;
+  }
+
   .topbar {
-    padding: 40px 30px;
+    padding: 0px 30px;
   }
 
   .topbar.scrolled{
-    padding: 30px;
+    padding: 0px 30px 30px;
   }
+  
 
     .topbar img {
     width: 140px;
@@ -2702,7 +2712,7 @@ grid-template-columns:1fr;
 
 .hero-copy h1{
 
-font-size:42px;
+font-size:34px;
 
 }
 
@@ -2760,9 +2770,9 @@ font-size:42px;
 
 }
 
-.topbar-inner{
+.container.topbar-inner{
 
-height:75px;
+height: auto;
 
 }
 
@@ -2876,18 +2886,18 @@ height:75px;
 @media(max-width:500px){
 
   .topbar img {
-    width: 110px;
+    width: 120px;
   }
 
-  .topbar-inner{
+  .container.topbar-inner{
 
-height:62.5px;
+height: auto;
 
 }
 
   .hero-copy h1{
 
-font-size:36px;
+font-size:30px;
 
 }
 
@@ -2961,9 +2971,9 @@ font-size:36px;
     width: 110px;
   }
 
-  .topbar-inner{
+  .container.topbar-inner{
 
-  height:50px;
+  height: auto;
 
   }
 
@@ -3019,9 +3029,6 @@ font-size:36px;
     gap: 30px;
   }
 
-  .container.topbar-inner {
-    height: 50px;
-  }
 
 }
 
