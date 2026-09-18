@@ -1167,7 +1167,8 @@ button{
   color: #c65d4c;
 
   letter-spacing: 1px;
-  font-family: 'Pt Serif'
+  font-family: "PT Serif", serif;
+  font-weight: 700;
 }
 
 .hero-divider{
