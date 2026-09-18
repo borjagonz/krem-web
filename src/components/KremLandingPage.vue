@@ -3121,7 +3121,7 @@ font-size:36px;
   }
 
   .hero-copy{
-    padding-top: 80px;
+    padding-top: 40px;
 
   }
 
