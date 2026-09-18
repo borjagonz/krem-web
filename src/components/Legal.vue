@@ -14,13 +14,13 @@
 
     <router-link to="/" class="legal-logo">
       <img
-        src="../assets/logo-krem.jpg"
+            src="../assets/logo-krem-new.png"
         alt="Krem"
       >
     </router-link>
 
     <router-link to="/" class="back-link">
-      VOLVER A KREM
+      VOLVER
     </router-link>
 
   </div>
@@ -336,7 +336,7 @@ onUnmounted(() => {
 .legal-header-inner{ display:flex; align-items:center; justify-content:space-between; margin:0; width:100%; } 
 .legal-logo{ width:150px; transition:.8s; } 
 .legal-logo img{ display:block; width:100%; } 
-.back-link{ color:#eebfb9; font-size:13px; font-weight:600; letter-spacing:1.5px; border:1px solid #eebfb9; border-radius:200px; padding:11px 20px; transition:.3s ease; } .back-link:hover{ background:#eebfb9; color:#973e30; }
+.back-link{ color:#eebfb9; font-size:13px; font-weight:600; letter-spacing:1.5px; border:1px solid #eebfb9; border-radius:200px; padding:14px 20px 12px; transition:.3s ease; } .back-link:hover{ background:#eebfb9; color:#973e30; }
 
 
 /* CONTENIDO */

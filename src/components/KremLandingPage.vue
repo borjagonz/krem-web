@@ -114,6 +114,8 @@
 
           </div>
 
+          <h1>RESTAURACIÓ <br>PROFESSIONAL</h1>
+          <div class="hero-divider"></div>
 
           <h2>
 
@@ -277,14 +279,7 @@
 
           </p>
 
-          <div class="signature">
 
-            Creamos momentos memorables.
-            <br>
-
-            Tú creas experiencias inolvidables.
-
-          </div>
 
         </div>
 
@@ -906,7 +901,7 @@ button{
 
 .logo{
 
-  width:240px;
+  width:200px;
   transition: 0.8s ;
 
 }
@@ -1153,6 +1148,7 @@ button{
   justify-content:center;
 
   color:white;
+  padding-bottom: 30px;
 
 }
 
@@ -1160,17 +1156,18 @@ button{
 
 .hero-copy h1{
 
-  font-size:52px;
+  font-size:36px;
 
   line-height: 1.1;
 
   font-weight:500;
 
-  margin-bottom:21px;
+  margin-bottom:20px;
 
-  color: #eebfb9;
+  color: #c95c4c;
 
   letter-spacing: 1px;
+  font-family: 'Pt Serif'
 }
 
 .hero-divider{
@@ -1180,7 +1177,7 @@ button{
 
   background: #973e30;
 
-  margin-bottom:25px;
+  margin-bottom:20px;
 
 }
 
@@ -1188,11 +1185,11 @@ button{
 
   color: #ffffff;
 
-  font-size:28px;
+  font-size:24px;
 
   font-weight:400;
 
-  margin-bottom:25px;
+  margin-bottom:20px;
 
   line-height: 1.3;
 
@@ -1208,8 +1205,8 @@ button{
 
   line-height:1.7;
 
-  font-size:1rem;
-  margin-bottom:25px;
+  font-size:14px;
+  margin-bottom:20px;
 
 
 }
@@ -1217,42 +1214,46 @@ button{
 .hero-reviews {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
   width: max-content;
   color: #ffffff;
   transition: .3s ease-in-out;
   border: solid 1px #973e30;
-  padding: 15px 25px;
+  padding: 12px 16px;
   border-radius: 50px;
 }
 
 .hero-reviews:hover {
-  transform: translateY(-2px);
-  opacity: .85;
+  scale: 1.02;
 }
 
 .reviews-stars {
   display: flex;
-  gap: 3px;
+  gap: px;
   color: #f4b942;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1;
+  align-items: center;
+  position: relative;
+  bottom: 1px;
 }
 
 .reviews-info {
   display: flex;
-  flex-direction: column;
-  gap: 3px;
+  gap: 10px;
   line-height: 1;
+  align-items: center;
+  position: relative;
+  top: 1px;
 }
 
 .reviews-info strong {
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 600;
 }
 
 .reviews-info span {
-  font-size: 11px;
+  font-size: 12px;
   color: rgba(255, 255, 255, .75);
   letter-spacing: .5px;
 }
@@ -1261,7 +1262,7 @@ button{
 
   display: flex; 
 
-  gap:35px;
+  gap:22px;
 
   margin-top: 125px;
 
@@ -1286,10 +1287,10 @@ button{
 
 .feature1 img{
 
-  width: 35px;
+  width: 30px;
   height: 40px;
   object-fit: contain;
-  margin: 0 auto 10px;
+  margin: 0 auto 8px;
   display: block;
 
 }
@@ -1297,7 +1298,7 @@ button{
 .feature1 span{
 
   display: block;
-  font-size: .82rem;
+  font-size: 12px;
   line-height: 1.5;
   letter-spacing: 1px;
   color:rgba(255, 255, 255, 0.8);
@@ -1429,6 +1430,8 @@ button{
 .about-col ul{
 
   list-style:none;
+  display: grid;
+  grid-template-columns:repeat(2,1fr);
 
 }
 
@@ -2184,6 +2187,18 @@ FOOTER
 
 }
 
+.about-col p{
+  max-width: 400px;
+}
+
+.about-col ul{
+
+  list-style:none;
+  display: grid;
+  grid-template-columns:repeat(1,1fr);
+
+}
+
 .container.formats-grid{
   grid-template-columns: 1fr 1fr;
 }
@@ -2284,6 +2299,16 @@ right:auto;
   );
 
   z-index:2;
+
+}
+
+.about-col p {
+  max-width: 500px;
+}
+
+.about-grid{
+
+grid-template-columns:1fr;
 
 }
 
@@ -2920,7 +2945,11 @@ font-size:36px;
 @media(max-width:400px){
 
   .hero h1 {
-    font-size: 32px;
+    font-size: 28px;
+  }
+
+  .hero h2 {
+    font-size: 18px;
   }
 
   .hero p {
@@ -2969,7 +2998,7 @@ font-size:36px;
 
   .feature1 span {
     font-size: .52rem;
-    line-height: 1.4; 
+    line-height: 1.6; 
   }
 
 
@@ -3051,7 +3080,7 @@ font-size:36px;
   }
 
   .hero-copy h2{
-    font-size:20px;
+    font-size: 18px;
     margin-bottom:15px;
   }
 
@@ -3066,13 +3095,13 @@ font-size:36px;
 
   .feature1 img {
   width: 25px;
-  height: 40px;
+  height: 35px;
   margin: 0 auto 8px;
   }
 
   .feature1 span {
     font-size: .52rem;
-    line-height: 1; 
+    line-height: 1.4; 
   }
 
 }
