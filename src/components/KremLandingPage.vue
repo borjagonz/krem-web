@@ -3146,7 +3146,6 @@ font-size:36px;
   .hero-features{
     margin-top:18px;
     gap:14px;
-    display: none;
   }
 
 }
@@ -3207,6 +3206,8 @@ font-size:36px;
     .hero-features{
         margin-top:12px;
         gap:12px;
+    display: none;
+
     }
 
     .feature1 img{
