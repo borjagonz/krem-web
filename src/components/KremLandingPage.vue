@@ -1164,7 +1164,7 @@ button{
 
   margin-bottom:20px;
 
-  color: #c95c4c;
+  color: #c65d4c;
 
   letter-spacing: 1px;
   font-family: 'Pt Serif'
@@ -1219,12 +1219,12 @@ button{
   color: #ffffff;
   transition: .3s ease-in-out;
   border: solid 1px #973e30;
-  padding: 12px 16px;
+  padding: 8px 12px;
   border-radius: 50px;
 }
 
 .hero-reviews:hover {
-  scale: 1.02;
+  background-color: #973e30;
 }
 
 .reviews-stars {
@@ -1248,7 +1248,7 @@ button{
 }
 
 .reviews-info strong {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -3069,9 +3069,15 @@ font-size:36px;
     margin-bottom:15px;
   }
 
+    .hero-copy{
+    padding-bottom: 60px;
+    
+  }
+
   .hero-copy h1{
     line-height:1.05;
     margin-bottom:12px;
+    font-size: 30px;
   }
 
   .hero-divider{
@@ -3086,6 +3092,7 @@ font-size:36px;
 
   .hero-copy p{
     line-height:1.45;
+    font-size: 11px;
   }
 
   .hero-features {
@@ -3108,16 +3115,15 @@ font-size:36px;
 
 @media (max-height:650px){
 
-
+  .logo {
+    width: 120px;
+  }
 
   .hero-copy{
-    padding-top: 20px;
+    padding-top: 80px;
+
   }
 
-  .hero-logo img{
-    width:110px;
-    margin-bottom:10px;
-  }
 
   .hero-copy h1{
     margin-bottom:10px;
@@ -3133,14 +3139,13 @@ font-size:36px;
   }
 
   .hero-copy p{
-    width:100%;
-    font-size:.7rem;
-    line-height:1.35;
+
   }
 
   .hero-features{
     margin-top:18px;
     gap:14px;
+    display: none;
   }
 
 }
@@ -3169,7 +3174,7 @@ font-size:36px;
     }
 
     .hero-copy{
-        padding-top:70px;
+        padding-top:100px;
     }
 
     .hero-logo img{
@@ -3249,12 +3254,15 @@ font-size:36px;
       padding: 40px;
     }
 
+
+
+
 }
 
 @media (max-height:420px){
 
     .hero-copy{
-        padding-top:55px;
+        padding-top:120px;
     }
 
     .hero-logo img{
@@ -3269,7 +3277,7 @@ font-size:36px;
         font-size:14px;
     }
 
-    .hero-copy p{
+        .hero-reviews{
         display:none;
     }
 
@@ -3285,16 +3293,18 @@ font-size:36px;
 
 @media (max-height:360px){
 
-    .hero-logo{
-        display:none;
-    }
+
 
     .hero-features{
         display:none;
     }
 
     .hero-copy{
-        padding-top:45px;
+        padding-top:120px;
+    }
+
+    .hero-copy p{
+      display: none;
     }
 
 }
