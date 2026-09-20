@@ -2951,6 +2951,12 @@ font-size:30px;
   transform-origin: left center; 
 }
 
+.footer2 {
+
+  font-size: 10px;
+  gap: 25px;
+}
+
 }
 
 @media(max-width:400px){
