@@ -15,7 +15,7 @@
 
           <!-- Sustituir -->
           <img
-            src="../assets/logo-krem-new2.png"
+            src="../assets/logo-krem-new.png"
             alt="Krem"
           >
 
@@ -1169,7 +1169,7 @@ button{
 
   margin-bottom:20px;
 
-  color: #b25041;
+  color: #be4f3f;
 
   letter-spacing: 1px;
   font-family: "PT Serif", serif;
