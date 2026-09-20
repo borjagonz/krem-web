@@ -1169,7 +1169,7 @@ button{
 
   margin-bottom:20px;
 
-  color: #be4f3f;
+  color: #c1503e;
 
   letter-spacing: 1px;
   font-family: "PT Serif", serif;
@@ -1181,7 +1181,7 @@ button{
   width:90px;
   height:1px;
 
-  background: #87382b;
+  background: #974134;
 
   margin-bottom:20px;
 
@@ -1351,7 +1351,7 @@ button{
   font-family: Poppins;
   font-weight: 600;
 
-  color: #b03724;
+  color: #c1503e;
   padding: 60px 0px 0px 0px;
 
 }
@@ -1374,7 +1374,7 @@ button{
   width:80px;
   height:1px;
 
-  background: #b03724;
+  background: #c1503e;
 
   margin-bottom:20px;
   margin-top: 20px;
@@ -1386,7 +1386,7 @@ button{
   width:100%;
   height:1px;
 
-  background: #b03724;
+  background: #c1503e;
 
   margin:0px 40px;
 
@@ -1398,7 +1398,7 @@ button{
 
   width:1px;
 
-  background:#b03724;
+  background:#c1503e;
 
   opacity:.3;
 
@@ -1421,7 +1421,7 @@ button{
 
   font-style:italic;
 
-  color: #b03724;
+  color: #c1503e;
 
   font-size: 24px;
 
@@ -1452,7 +1452,7 @@ button{
 }
 
 .about-li-2 {
-  color: #b03724;
+  color: #c1503e;
   line-height: 2.5;
 }
 
@@ -1461,7 +1461,7 @@ button{
 }
 
 .check {
-  color: #b03724;
+  color: #c1503e;
 }
 
 .professionals{
@@ -1516,7 +1516,7 @@ FORMATOS
 
     font-size:24px;
 
-    color:#b03724;
+    color:#c1503e;
 
     font-weight:600;
 
@@ -1636,7 +1636,7 @@ BASE GALLETA
 
     text-align:center;
 
-    color:#9f4638;
+    color:#c1503e;
 
     font-size:24px;
 
@@ -1716,7 +1716,7 @@ FEATURES
 
 .features{
 
-    background:#bf6d60;
+    background:#bb5141;
 
     color:white;
 
@@ -1802,7 +1802,7 @@ CLIENTES
 }
 
 .clientes h2 {
-  color:#9f4638;
+  color:#c1503e;
   text-align: center;
 
   font-size:24px;
@@ -1876,7 +1876,7 @@ FOOTER
 
 .footer h2{
 
-    color:#9f4638;
+    color:#c1503e;
 
     font-size:24px;
 
@@ -1916,7 +1916,7 @@ FOOTER
 
 .footer-contact a:hover{
 
-    color:#a14638;
+    color:#c1503e;
 
 }
 
@@ -1924,7 +1924,7 @@ FOOTER
 
     width:22px;
 
-    color:#a14638;
+    color:#c1503e;
 
     font-size:18px;
 
@@ -1934,7 +1934,7 @@ FOOTER
 
   font-style:italic;
 
-  color: #b03724;
+  color: #c1503e;
 
   font-size: 24px;
 
@@ -1952,7 +1952,7 @@ FOOTER
 }
 
 .footer2 {
-  background-color: #973e30;
+  background-color: #c1503e;
   color: #eebfb9;
   padding: 30px;
   display: grid;
@@ -2016,7 +2016,7 @@ FOOTER
 
 .location-info h2{
 
-  color:#9f4638;
+  color:#c1503e;
 
   font-size:24px;
 
@@ -2085,7 +2085,7 @@ FOOTER
 
   display:block;
 
-  color:#9f4638;
+  color:#c1503e;
 
   font-size:12px;
 
@@ -2121,11 +2121,11 @@ FOOTER
 
   padding:12px 22px;
 
-  border:1px solid #973e30;
+  border:1px solid #c1503e;
 
   border-radius:200px;
 
-  color:#973e30;
+  color:#c1503e;
 
   font-size:13px;
 
