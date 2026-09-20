@@ -1955,8 +1955,8 @@ FOOTER
   background-color: #973e30;
   color: #eebfb9;
   padding: 30px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns:repeat(2,1fr);
   font-size: 12px;
   gap: 30px;
 }
@@ -2953,8 +2953,7 @@ font-size:30px;
 
 .footer2 {
 
-  font-size: 10px;
-  gap: 25px;
+  font-size: 8px;
 }
 
 }
