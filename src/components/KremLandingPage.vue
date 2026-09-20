@@ -272,7 +272,7 @@
           <p>
 
             Somos la marca de cheesecakes especializada en el canal HORECA. 
-
+             <br> 
 
             Trabajamos para restaurantes,
             hoteles y cafeterías que buscan
@@ -753,12 +753,12 @@ FOOTER
 
 <div class="footer2">
   <div class="empresa">
-    <p>KREM BY DOLCE INVESTMENTS SL</p>
+    <p>KREM by <br>DOLCE INVESTMENTS SL</p>
   <P>© 2026 KREM. Todos los derechos reservados.</P>
   </div>
   <div class="legal">
     <router-link to="/legal">
-      Aviso Legal y Política de Privacidad
+      Aviso Legal y <br> Política de Privacidad
     </router-link>
 
     <router-link to="/legal">
@@ -905,7 +905,7 @@ button{
 
 .logo{
 
-  width:180px;
+  width:175px;
   transition: 0.8s ;
 
 
@@ -1169,7 +1169,7 @@ button{
 
   margin-bottom:20px;
 
-  color: #c65d4c;
+  color: #b1584a;
 
   letter-spacing: 1px;
   font-family: "PT Serif", serif;
@@ -1938,9 +1938,9 @@ FOOTER
 
   font-size: 24px;
 
-  font-family: "Oooh Baby", cursive;
+  font-family: "Petit Formal Script";
   font-weight: 600;
-  font-style: normal;
+  font-size: 18px;
 
   letter-spacing: 0.8px;
 
@@ -2387,11 +2387,12 @@ grid-template-columns:1fr;
     justify-content:center;
     padding: 0;
 
+
 }
 
 .footer-signature p{
 
-    text-align:center;
+  text-align:center;
 
 }
 
