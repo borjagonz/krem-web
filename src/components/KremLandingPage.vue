@@ -99,11 +99,44 @@
               HERO
     ========================== -->
 
-    <section class="hero">
+<section
+  class="hero"
+  @touchstart="handleTouchStart"
+  @touchend="handleTouchEnd"
+>
 
-      <div class="hero-overlay"></div>
+  <!-- =========================
+       SLIDER DEL HERO
+  ========================== -->
 
-      <div class="container hero-grid">
+  <div class="hero-slider">
+
+    <!-- SLIDE 1 · IMAGEN -->
+    <div
+      class="hero-slide hero-slide-image"
+      :class="{ active: currentSlide === 0 }"
+    ></div>
+
+    <!-- SLIDE 2 · VÍDEO -->
+    <div
+      class="hero-slide hero-slide-video"
+      :class="{ active: currentSlide === 1 }"
+    >
+      <video
+        ref="heroVideo"
+        src="../assets/cheescake-hero.mp4"
+        muted
+        loop
+        playsinline
+        preload="metadata"
+      ></video>
+    </div>
+
+  </div>
+
+  <div class="hero-overlay"></div>
+
+  <div class="container hero-grid">
 
         <!-- Texto -->
 
@@ -235,6 +268,44 @@
           </div>
 
         </div>
+
+      </div>
+
+      <!-- =========================
+           CONTROLES SLIDER
+      ========================== -->
+
+      <div class="hero-slider-controls">
+
+        <button
+          class="hero-slider-arrow"
+          @click="previousSlide"
+          aria-label="Slide anterior"
+        >
+          <
+        </button>
+
+        <div class="hero-slider-dots">
+
+          <span
+            class="hero-slider-dot"
+            :class="{ active: currentSlide === 0 }"
+          ></span>
+
+          <span
+            class="hero-slider-dot"
+            :class="{ active: currentSlide === 1 }"
+          ></span>
+
+        </div>
+
+        <button
+          class="hero-slider-arrow"
+          @click="nextSlide"
+          aria-label="Siguiente slide"
+        >
+          >
+        </button>
 
       </div>
 
@@ -777,16 +848,145 @@ import { ref, onMounted, onUnmounted } from 'vue'
 const isScrolled = ref(false)
 const menuOpen = ref(false)
 
+const currentSlide = ref(0)
+const heroVideo = ref(null)
+
+const touchStartX = ref(0)
+const touchEndX = ref(0)
+
+// Intervalo automático del slider
+let sliderInterval = null
+
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 30
 }
 
+/* =========================
+   SLIDER
+========================= */
+
+const goToSlide = (index) => {
+  currentSlide.value = index
+
+  // Si entramos en el vídeo, lo reproducimos desde el principio
+  if (index === 1 && heroVideo.value) {
+    heroVideo.value.currentTime = 0
+    heroVideo.value.play().catch(() => {})
+  }
+
+  // Si volvemos a la imagen, pausamos el vídeo
+  if (index === 0 && heroVideo.value) {
+    heroVideo.value.pause()
+  }
+
+  // Reiniciamos los 15 segundos cada vez que cambiamos de slide
+  restartSliderInterval()
+}
+
+const nextSlide = () => {
+  goToSlide((currentSlide.value + 1) % 2)
+}
+
+const previousSlide = () => {
+  goToSlide((currentSlide.value - 1 + 2) % 2)
+}
+
+
+/* =========================
+   CAMBIO AUTOMÁTICO
+   CADA 15 SEGUNDOS
+========================= */
+
+const startSliderInterval = () => {
+
+  sliderInterval = setInterval(() => {
+
+    const nextIndex = (currentSlide.value + 1) % 2
+
+    currentSlide.value = nextIndex
+
+    // Si entramos en el vídeo, lo reproducimos desde el principio
+    if (nextIndex === 1 && heroVideo.value) {
+      heroVideo.value.currentTime = 0
+      heroVideo.value.play().catch(() => {})
+    }
+
+    // Si volvemos a la imagen, pausamos el vídeo
+    if (nextIndex === 0 && heroVideo.value) {
+      heroVideo.value.pause()
+    }
+
+  }, 15000)
+}
+
+
+const restartSliderInterval = () => {
+
+  clearInterval(sliderInterval)
+
+  startSliderInterval()
+
+}
+
+
+/* =========================
+   SWIPE EN MÓVIL
+========================= */
+
+const handleTouchStart = (event) => {
+  touchStartX.value = event.changedTouches[0].screenX
+}
+
+
+const handleTouchEnd = (event) => {
+
+  touchEndX.value = event.changedTouches[0].screenX
+
+  const distance = touchEndX.value - touchStartX.value
+
+  // Evitamos cambiar con movimientos demasiado pequeños
+  if (Math.abs(distance) < 50) return
+
+  // Deslizar hacia la izquierda
+  if (distance < 0) {
+    nextSlide()
+  }
+
+  // Deslizar hacia la derecha
+  else {
+    previousSlide()
+  }
+
+}
+
+
+/* =========================
+   MOUNT
+========================= */
+
 onMounted(() => {
+
   window.addEventListener("scroll", handleScroll)
+
+  // Iniciamos el cambio automático
+  // después de 15 segundos
+  startSliderInterval()
+
 })
 
+
+/* =========================
+   UNMOUNT
+========================= */
+
 onUnmounted(() => {
+
   window.removeEventListener("scroll", handleScroll)
+
+  // Limpiamos el intervalo para evitar
+  // que siga ejecutándose al salir del componente
+  clearInterval(sliderInterval)
+
 })
 </script>
 
@@ -1116,12 +1316,218 @@ button{
 
   overflow:hidden;
 
-  background-image: url('../assets/Krem-Hero-NEW.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  padding:0 60px;
 
-  padding: 0px 60px;
+  touch-action:pan-y;
+
+}
+
+/*==================================================
+ HERO SLIDER
+==================================================*/
+
+.hero-slider{
+
+  position:absolute;
+
+  inset:0;
+
+  z-index:1;
+
+  overflow:hidden;
+
+}
+
+
+/* Cada slide */
+
+.hero-slide{
+
+  position:absolute;
+
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  opacity:0;
+
+  transition:opacity .8s ease-in-out;
+
+  pointer-events:none;
+
+}
+
+
+/* Slide activo */
+
+.hero-slide.active{
+
+  opacity:1;
+
+}
+
+
+/* Imagen */
+
+.hero-slide-image{
+
+  background-image:url('../assets/Krem-Hero-NEW.jpg');
+
+  background-size:cover;
+
+  background-position:center;
+
+  background-repeat:no-repeat;
+
+}
+
+
+/* Vídeo */
+
+.hero-slide-video{
+
+  background:#000;
+
+}
+
+.hero-slide-video::after {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, .92) 0%,
+    rgba(0, 0, 0, .85) 15%,
+    rgba(0, 0, 0, .55) 30%,
+    rgba(0, 0, 0, .2) 45%,
+    rgba(0, 0, 0, 0) 60%
+  );
+
+  pointer-events: none;
+
+}
+
+
+.hero-slide-video video{
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+  object-position:center;
+
+  display:block;
+
+}
+
+
+/*==================================================
+ CONTROLES DEL SLIDER
+==================================================*/
+
+.hero-slider-controls{
+
+  position:absolute;
+
+  right:60px;
+
+  bottom:60px;
+
+  z-index:10;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:18px;
+
+}
+
+
+/* Flechas */
+
+.hero-slider-arrow{
+
+  padding: 12px 16px 10px 16px;
+
+  border:1px solid rgba(255,255,255,.65);
+
+  border-radius:50%;
+
+  background:rgba(0,0,0,.15);
+
+  color:#fff;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:22px;
+
+  line-height:1;
+
+  transition:.3s ease;
+
+  backdrop-filter:blur(4px);
+
+}
+
+
+.hero-slider-arrow:hover{
+
+  background:#973e30;
+
+  border-color:#973e30;
+
+}
+
+
+/* Dos círculos centrales */
+
+.hero-slider-dots{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:8px;
+
+}
+
+
+.hero-slider-dot{
+
+  width:9px;
+
+  height:9px;
+
+  border-radius:50%;
+
+  border:1px solid rgba(255,255,255,.8);
+
+  background:transparent;
+
+  transition:.3s ease;
+
+}
+
+
+/* Círculo correspondiente al slide activo */
+
+.hero-slider-dot.active{
+
+  background:#eebfb9;
+
+  border-color:#eebfb9;
 
 }
 
@@ -1169,7 +1575,7 @@ button{
 
   margin-bottom:20px;
 
-  color: #c1503e;
+  color: #b44f3f;
 
   letter-spacing: 1px;
   font-family: "PT Serif", serif;
@@ -1351,7 +1757,7 @@ button{
   font-family: Poppins;
   font-weight: 600;
 
-  color: #c1503e;
+  color: #b44f3f;
   padding: 60px 0px 0px 0px;
 
 }
@@ -1374,7 +1780,7 @@ button{
   width:80px;
   height:1px;
 
-  background: #c1503e;
+  background: #b44f3f;
 
   margin-bottom:20px;
   margin-top: 20px;
@@ -1386,7 +1792,7 @@ button{
   width:100%;
   height:1px;
 
-  background: #c1503e;
+  background: #b44f3f;
 
   margin:0px 40px;
 
@@ -1398,7 +1804,7 @@ button{
 
   width:1px;
 
-  background:#c1503e;
+  background:#b44f3f;
 
   opacity:.3;
 
@@ -1421,7 +1827,7 @@ button{
 
   font-style:italic;
 
-  color: #c1503e;
+  color: #b44f3f;
 
   font-size: 24px;
 
@@ -1452,7 +1858,7 @@ button{
 }
 
 .about-li-2 {
-  color: #c1503e;
+  color: #b44f3f;
   line-height: 2.5;
 }
 
@@ -1461,7 +1867,7 @@ button{
 }
 
 .check {
-  color: #c1503e;
+  color: #b44f3f;
 }
 
 .professionals{
@@ -1516,7 +1922,7 @@ FORMATOS
 
     font-size:24px;
 
-    color:#c1503e;
+    color:#b44f3f;
 
     font-weight:600;
 
@@ -1636,7 +2042,7 @@ BASE GALLETA
 
     text-align:center;
 
-    color:#c1503e;
+    color:#b44f3f;
 
     font-size:24px;
 
@@ -1716,7 +2122,7 @@ FEATURES
 
 .features{
 
-    background:#bb5141;
+    background:#b44f3f;
 
     color:white;
 
@@ -1802,7 +2208,7 @@ CLIENTES
 }
 
 .clientes h2 {
-  color:#c1503e;
+  color:#b44f3f;
   text-align: center;
 
   font-size:24px;
@@ -1876,7 +2282,7 @@ FOOTER
 
 .footer h2{
 
-    color:#c1503e;
+    color:#b44f3f;
 
     font-size:24px;
 
@@ -1916,7 +2322,7 @@ FOOTER
 
 .footer-contact a:hover{
 
-    color:#c1503e;
+    color:#b44f3f;
 
 }
 
@@ -1924,7 +2330,7 @@ FOOTER
 
     width:22px;
 
-    color:#c1503e;
+    color:#b44f3f;
 
     font-size:18px;
 
@@ -1934,7 +2340,7 @@ FOOTER
 
   font-style:italic;
 
-  color: #c1503e;
+  color: #b44f3f;
 
   font-size: 24px;
 
@@ -1952,7 +2358,7 @@ FOOTER
 }
 
 .footer2 {
-  background-color: #c1503e;
+  background-color: #b44f3f;
   color: #eebfb9;
   padding: 30px;
   display: grid;
@@ -2016,7 +2422,7 @@ FOOTER
 
 .location-info h2{
 
-  color:#c1503e;
+  color:#b44f3f;
 
   font-size:24px;
 
@@ -2085,7 +2491,7 @@ FOOTER
 
   display:block;
 
-  color:#c1503e;
+  color:#b44f3f;
 
   font-size:12px;
 
@@ -2121,11 +2527,11 @@ FOOTER
 
   padding:12px 22px;
 
-  border:1px solid #c1503e;
+  border:1px solid #b44f3f;
 
   border-radius:200px;
 
-  color:#c1503e;
+  color:#b44f3f;
 
   font-size:13px;
 
@@ -2190,6 +2596,12 @@ FOOTER
 
   z-index:2;
 
+}
+
+.hero-slide-video::after {
+
+
+  display: none;
 }
 
 .about-col p{
@@ -2452,8 +2864,17 @@ grid-template-columns:1fr;
 
 .hero {
   padding: 40px;
-  background-image: url('../assets/Krem-Hero-NEW-responsive.jpg');
 
+}
+
+.hero-slide-image{
+
+  background-image:url('../assets/Krem-Hero-NEW-responsive.jpg');
+
+}
+
+.hero-slider-controls{
+  display:none;
 }
 
 .hero-copy h1{
@@ -2953,7 +3374,7 @@ font-size:30px;
 
 .footer2 {
 
-  font-size: 8px;
+  font-size: 10px;
 }
 
 }
