@@ -842,6 +842,7 @@ FOOTER
   </div>
 </template>
 
+```vue
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
@@ -855,11 +856,17 @@ const touchStartX = ref(0)
 const touchEndX = ref(0)
 
 // Intervalo automático del slider
-let sliderInterval = null
+let sliderTimeout = null
+
+// Duración de cada slide
+const IMAGE_DURATION = 3000   // 3 segundos
+const VIDEO_DURATION = 15000  // 15 segundos
+
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 30
 }
+
 
 /* =========================
    SLIDER
@@ -868,24 +875,27 @@ const handleScroll = () => {
 const goToSlide = (index) => {
   currentSlide.value = index
 
-  // Si entramos en el vídeo, lo reproducimos desde el principio
+  // Si entramos en el vídeo
   if (index === 1 && heroVideo.value) {
     heroVideo.value.currentTime = 0
     heroVideo.value.play().catch(() => {})
   }
 
-  // Si volvemos a la imagen, pausamos el vídeo
+  // Si volvemos a la imagen
   if (index === 0 && heroVideo.value) {
     heroVideo.value.pause()
   }
 
-  // Reiniciamos los 15 segundos cada vez que cambiamos de slide
-  restartSliderInterval()
+  // Reiniciamos el temporizador con la duración
+  // correspondiente al nuevo slide
+  restartSliderTimeout()
 }
+
 
 const nextSlide = () => {
   goToSlide((currentSlide.value + 1) % 2)
 }
+
 
 const previousSlide = () => {
   goToSlide((currentSlide.value - 1 + 2) % 2)
@@ -894,38 +904,45 @@ const previousSlide = () => {
 
 /* =========================
    CAMBIO AUTOMÁTICO
-   CADA 15 SEGUNDOS
 ========================= */
 
-const startSliderInterval = () => {
+const startSliderTimeout = () => {
 
-  sliderInterval = setInterval(() => {
+  // Limpiamos cualquier temporizador anterior
+  clearTimeout(sliderTimeout)
+
+  // Duración según el slide actual
+  const duration = currentSlide.value === 0
+    ? IMAGE_DURATION
+    : VIDEO_DURATION
+
+  sliderTimeout = setTimeout(() => {
 
     const nextIndex = (currentSlide.value + 1) % 2
 
     currentSlide.value = nextIndex
 
-    // Si entramos en el vídeo, lo reproducimos desde el principio
+    // Si entramos en el vídeo
     if (nextIndex === 1 && heroVideo.value) {
       heroVideo.value.currentTime = 0
       heroVideo.value.play().catch(() => {})
     }
 
-    // Si volvemos a la imagen, pausamos el vídeo
+    // Si volvemos a la imagen
     if (nextIndex === 0 && heroVideo.value) {
       heroVideo.value.pause()
     }
 
-  }, 15000)
+    // Programamos el siguiente cambio
+    startSliderTimeout()
+
+  }, duration)
 }
 
 
-const restartSliderInterval = () => {
-
-  clearInterval(sliderInterval)
-
-  startSliderInterval()
-
+const restartSliderTimeout = () => {
+  clearTimeout(sliderTimeout)
+  startSliderTimeout()
 }
 
 
@@ -956,7 +973,6 @@ const handleTouchEnd = (event) => {
   else {
     previousSlide()
   }
-
 }
 
 
@@ -968,9 +984,9 @@ onMounted(() => {
 
   window.addEventListener("scroll", handleScroll)
 
-  // Iniciamos el cambio automático
-  // después de 15 segundos
-  startSliderInterval()
+  // Comenzamos mostrando la imagen
+  // durante 3 segundos
+  startSliderTimeout()
 
 })
 
@@ -983,12 +999,13 @@ onUnmounted(() => {
 
   window.removeEventListener("scroll", handleScroll)
 
-  // Limpiamos el intervalo para evitar
-  // que siga ejecutándose al salir del componente
-  clearInterval(sliderInterval)
+  // Limpiamos el temporizador
+  clearTimeout(sliderTimeout)
 
 })
 </script>
+```
+
 
 <style scoped>
 
