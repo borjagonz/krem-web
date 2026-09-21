@@ -268,7 +268,7 @@
 
     <!-- FOOTER -->
 
-    <footer class="legal-footer">
+    <footer class="footer2">
 
       <div class="container">
 
@@ -331,8 +331,8 @@ onUnmounted(() => {
 
 /* HEADER */
 
-.legal-header{ position:fixed; top:0; left:0; width:100%; z-index:999; transition:.35s; padding:30px 60px; background:rgba(81, 0, 0, 0.4)} 
-.legal-header.scrolled{ backdrop-filter:blur(12px); background:rgba(81, 0, 0, 0.4); padding:30px 60px; } 
+.legal-header{ position:fixed; top:0; left:0; width:100%; z-index:999; transition:.35s; padding:0px 60px 30px; background:rgba(81, 0, 0, 0.4)} 
+.legal-header.scrolled{ backdrop-filter:blur(12px); background:rgba(81, 0, 0, 0.4); padding:0px 60px 30px; } 
 .legal-header-inner{ display:flex; align-items:center; justify-content:space-between; margin:0; width:100%; } 
 .legal-logo{ width:150px; transition:.8s; } 
 .legal-logo img{ display:block; width:100%; } 
@@ -359,7 +359,7 @@ onUnmounted(() => {
 
 .legal-container > h1{
 
-  color:#9f4638;
+  color:#b44f3f;
 
   font-size:34px;
 
@@ -394,7 +394,7 @@ onUnmounted(() => {
 
 .legal-section h2{
 
-  color:#9f4638;
+  color:#b44f3f;
 
   font-size:27px;
 
@@ -407,7 +407,7 @@ onUnmounted(() => {
 
 .legal-section h3{
 
-  color:#973e30;
+  color:#b44f3f;
 
   font-size:17px;
 
@@ -460,7 +460,7 @@ onUnmounted(() => {
 
 .company-data strong{
 
-  color:#973e30;
+  color:#b44f3f;
 
 }
 
@@ -478,9 +478,9 @@ onUnmounted(() => {
 }
 
 
-.legal-footer{
+.footer2{
 
-  background:#973e30;
+  background:#b44f3f;
 
   color:#eebfb9;
 
@@ -491,7 +491,7 @@ onUnmounted(() => {
 }
 
 
-.legal-footer .container{
+.footer2 .container{
 
   display:flex;
 

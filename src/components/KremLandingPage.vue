@@ -126,11 +126,17 @@
         ref="heroVideo"
         src="../assets/cheescake-hero.mp4"
         muted
-        loop
         playsinline
         preload="metadata"
       ></video>
     </div>
+
+<!-- CAPA OSCURA DE TRANSICIÓN -->
+<div
+  class="hero-transition"
+  :class="{ active: isTransitioning }"
+></div>
+    
 
   </div>
 
@@ -842,7 +848,7 @@ FOOTER
   </div>
 </template>
 
-```vue
+
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
@@ -855,156 +861,175 @@ const heroVideo = ref(null)
 const touchStartX = ref(0)
 const touchEndX = ref(0)
 
-// Intervalo automático del slider
+// Estado de la transición
+const isTransitioning = ref(false)
+
+// Timeout del slider
 let sliderTimeout = null
 
 // Duración de cada slide
 const IMAGE_DURATION = 3000   // 3 segundos
 const VIDEO_DURATION = 15000  // 15 segundos
 
+// Duración de cada fase del fade
+const FADE_DURATION = 600
+
+
+// ==============================
+// SCROLL
+// ==============================
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 30
 }
 
 
-/* =========================
-   SLIDER
-========================= */
+// ==============================
+// CAMBIAR SLIDE
+// ==============================
 
 const goToSlide = (index) => {
-  currentSlide.value = index
 
-  // Si entramos en el vídeo
-  if (index === 1 && heroVideo.value) {
-    heroVideo.value.currentTime = 0
-    heroVideo.value.play().catch(() => {})
-  }
+  // Evitamos varios cambios a la vez
+  if (isTransitioning.value) return
 
-  // Si volvemos a la imagen
-  if (index === 0 && heroVideo.value) {
-    heroVideo.value.pause()
-  }
+  clearTimeout(sliderTimeout)
 
-  // Reiniciamos el temporizador con la duración
-  // correspondiente al nuevo slide
-  restartSliderTimeout()
+  isTransitioning.value = true
+
+  // Esperamos a que el fade a negro termine
+  setTimeout(() => {
+
+    // Cambiamos el slide cuando está completamente negro
+    currentSlide.value = index
+
+    // Controlamos el vídeo
+    if (index === 1 && heroVideo.value) {
+      heroVideo.value.currentTime = 0
+
+      heroVideo.value.play().catch(() => {})
+    }
+
+    if (index === 0 && heroVideo.value) {
+      heroVideo.value.pause()
+      heroVideo.value.currentTime = 0
+    }
+
+    // Esperamos un pequeño instante para asegurarnos
+    // de que el nuevo slide está renderizado
+    setTimeout(() => {
+
+      // Comenzamos el fade desde negro hacia el nuevo slide
+      isTransitioning.value = false
+
+      // Reiniciamos el tiempo del nuevo slide
+      startSliderTimeout()
+
+    }, 80)
+
+  }, FADE_DURATION)
 }
 
+
+// ==============================
+// SIGUIENTE SLIDE
+// ==============================
 
 const nextSlide = () => {
-  goToSlide((currentSlide.value + 1) % 2)
+  const nextIndex = (currentSlide.value + 1) % 2
+
+  goToSlide(nextIndex)
 }
 
+
+// ==============================
+// SLIDE ANTERIOR
+// ==============================
 
 const previousSlide = () => {
-  goToSlide((currentSlide.value - 1 + 2) % 2)
+  const previousIndex =
+    (currentSlide.value - 1 + 2) % 2
+
+  goToSlide(previousIndex)
 }
 
 
-/* =========================
-   CAMBIO AUTOMÁTICO
-========================= */
+// ==============================
+// SLIDER AUTOMÁTICO
+// ==============================
 
 const startSliderTimeout = () => {
 
-  // Limpiamos cualquier temporizador anterior
   clearTimeout(sliderTimeout)
 
-  // Duración según el slide actual
-  const duration = currentSlide.value === 0
-    ? IMAGE_DURATION
-    : VIDEO_DURATION
+  const duration =
+    currentSlide.value === 0
+      ? IMAGE_DURATION
+      : VIDEO_DURATION
 
   sliderTimeout = setTimeout(() => {
 
     const nextIndex = (currentSlide.value + 1) % 2
 
-    currentSlide.value = nextIndex
-
-    // Si entramos en el vídeo
-    if (nextIndex === 1 && heroVideo.value) {
-      heroVideo.value.currentTime = 0
-      heroVideo.value.play().catch(() => {})
-    }
-
-    // Si volvemos a la imagen
-    if (nextIndex === 0 && heroVideo.value) {
-      heroVideo.value.pause()
-    }
-
-    // Programamos el siguiente cambio
-    startSliderTimeout()
+    goToSlide(nextIndex)
 
   }, duration)
 }
 
 
-const restartSliderTimeout = () => {
-  clearTimeout(sliderTimeout)
-  startSliderTimeout()
-}
-
-
-/* =========================
-   SWIPE EN MÓVIL
-========================= */
+// ==============================
+// TOUCH / SWIPE
+// ==============================
 
 const handleTouchStart = (event) => {
   touchStartX.value = event.changedTouches[0].screenX
 }
 
-
 const handleTouchEnd = (event) => {
 
   touchEndX.value = event.changedTouches[0].screenX
 
-  const distance = touchEndX.value - touchStartX.value
+  const distance =
+    touchEndX.value - touchStartX.value
 
-  // Evitamos cambiar con movimientos demasiado pequeños
+  // Ignorar movimientos pequeños
   if (Math.abs(distance) < 50) return
 
-  // Deslizar hacia la izquierda
+  // Swipe izquierda
   if (distance < 0) {
     nextSlide()
   }
 
-  // Deslizar hacia la derecha
+  // Swipe derecha
   else {
     previousSlide()
   }
 }
 
 
-/* =========================
-   MOUNT
-========================= */
+// ==============================
+// MOUNT
+// ==============================
 
 onMounted(() => {
 
-  window.addEventListener("scroll", handleScroll)
+  window.addEventListener('scroll', handleScroll)
 
-  // Comenzamos mostrando la imagen
-  // durante 3 segundos
   startSliderTimeout()
-
 })
 
 
-/* =========================
-   UNMOUNT
-========================= */
+// ==============================
+// UNMOUNT
+// ==============================
 
 onUnmounted(() => {
 
-  window.removeEventListener("scroll", handleScroll)
+  window.removeEventListener('scroll', handleScroll)
 
-  // Limpiamos el temporizador
   clearTimeout(sliderTimeout)
-
 })
 </script>
-```
 
 
 <style scoped>
@@ -1343,45 +1368,54 @@ button{
  HERO SLIDER
 ==================================================*/
 
-.hero-slider{
-
-  position:absolute;
-
-  inset:0;
-
-  z-index:1;
-
-  overflow:hidden;
-
+.hero-slider { 
+  position:absolute; 
+  inset:0; 
+  z-index:1; 
+  overflow:hidden; 
+  background:#0A0A0A; 
 }
 
 
 /* Cada slide */
 
 .hero-slide{
-
   position:absolute;
-
   inset:0;
-
   width:100%;
   height:100%;
+  opacity:0;
+  transition:none;
+  pointer-events:none;
+}
+
+.hero-slide.active{
+  opacity:1;
+}
+
+.hero-transition{
+  position:absolute;
+  inset:0;
+  z-index:3;
+  background:#0A0A0A;
 
   opacity:0;
-
-  transition:opacity .8s ease-in-out;
+  visibility:hidden;
 
   pointer-events:none;
 
+  transition:
+    opacity 0.6s ease-in-out,
+    visibility 0s linear 0.6s;
 }
 
-
-/* Slide activo */
-
-.hero-slide.active{
-
+.hero-transition.active{
   opacity:1;
+  visibility:visible;
 
+  transition:
+    opacity 0.6s ease-in-out,
+    visibility 0s linear 0s;
 }
 
 
@@ -1404,7 +1438,7 @@ button{
 
 .hero-slide-video{
 
-  background:#000;
+  background:#0A0A0A;
 
 }
 
