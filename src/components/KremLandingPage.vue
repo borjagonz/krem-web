@@ -124,7 +124,7 @@
     >
       <video
         ref="heroVideo"
-        src="../assets/cheescake-hero.mp4"
+        src="../assets/cheesecake-hero.mp4"
         muted
         playsinline
         preload="metadata"
@@ -162,7 +162,7 @@
 
           <h2>
 
-            SIGNATURE CHEESCAKES
+            SIGNATURE CHEESECAKES
             <br>
             PARA RESTAURANTES Y HOTELES
 
@@ -215,7 +215,7 @@
 
               <span>
 
-                CHEESCAKES <br> DE AUTOR
+                CHEESECAKES <br> DE AUTOR
 
               </span>
 
