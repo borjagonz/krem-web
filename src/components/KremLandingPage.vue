@@ -721,7 +721,7 @@ FOOTER
 
             <img src="../assets/Telefono.svg">
 
-                <span>+34 611 123 456</span>
+                <span>+34 624 69 28 64</span>
 
             </a>
 
@@ -745,14 +745,13 @@ FOOTER
             </a>
 
             <a
-                href="#"
+                href="https://www.instagram.com/wearekrem/"
                 target="_blank"
             >
 
             <img src="../assets/Instagram.svg">
 
                 <span>@wearekrem</span>
-
             </a>
 
         </div>
@@ -2256,6 +2255,7 @@ CLIENTES
   background-color: #f8eeec;
 
   padding: 60px;
+  display: none;
 }
 
 .clientes h2 {
