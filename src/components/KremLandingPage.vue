@@ -672,6 +672,104 @@
 
 </section>
 
+<!-- ==========================================
+     RENTABILIDAD
+========================================== -->
+
+<section id="rentabilidad" class="profitability">
+
+    <div class="profitability-highlight">
+
+      <div class="profitability-highlight-title">
+
+        <h3>
+          Externalizar la tarta de queso con un obrador top como <span>KREM</span> permite:
+        </h3>
+
+        
+      </div>
+
+<ul>
+  <li>· Fijar un coste exacto por ración</li>
+  <li>· Reducir mermas a cero.</li>
+  <li>· Mantener un margen limpio de más del 60% en el postre.</li>
+</ul>
+
+    </div>
+
+  <div class="container">
+
+    <div class="profitability-header">
+
+      <h2>
+        TRES RAZONES,
+        UN SOLO RESULTADO: <br>
+        <span>RENTABILIDAD</span>
+      </h2>
+
+      <div class="title-line"></div>
+
+
+    </div>
+
+
+    <div class="profitability-grid">
+
+      <!-- CONTROL DE COSTES -->
+
+      <article class="profitability-card">
+
+
+        <h3>
+         VALIDACIÓN
+        </h3>
+
+        <p>
+          La tarta de queso artesanal elegida por más de 30 restaurantes en Barcelona.
+        </p>
+
+      </article>
+
+
+      <!-- MERMAS -->
+
+      <article class="profitability-card">
+
+
+        <h3>
+          NEGOCIO
+        </h3>
+
+        <p>
+          Un producto de alta rotación diseñado para hacerte ganar dinero.
+        </p>
+
+      </article>
+
+
+      <!-- MARGEN -->
+
+      <article class="profitability-card">
+
+        <h3>
+          EFICIENCIA
+        </h3>
+
+        <p>
+          Te ahorra problemas de personal, mermas y costes de luz.
+        </p>
+
+      </article>
+
+    </div>
+
+
+
+
+  </div>
+
+</section>
+
 
 <section class="clientes">
   <div class="container">
@@ -2248,6 +2346,310 @@ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 /*=========================================
+ RENTABILIDAD
+=========================================*/
+
+.profitability {
+
+  background-color: #f8eeec;
+
+    display:grid;
+    grid-template-columns:1.2fr 2.8fr;
+
+}
+
+
+
+
+.profitability-header {
+
+  text-align: left;
+
+  max-width: 760px;
+
+  padding: 60px;
+
+}
+
+
+.profitability-eyebrow {
+
+  display: block;
+
+  color: #b44f3f;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 2.5px;
+
+  margin-bottom: 18px;
+
+}
+
+
+.profitability-header h2 {
+
+  position: relative;
+
+  display: inline-block;
+
+
+  line-height: 1.15;
+
+  font-weight: 500;
+
+  margin: 0;
+
+    text-align:left;
+
+    color:#b44f3f;
+
+    font-size:24px;
+
+    font-weight:600;
+
+}
+
+
+.profitability-header h2 span {
+
+  position: relative;
+
+  display: inline-block;
+
+  color: #b44f3f;
+
+  font-weight: 600;
+
+  z-index: 1;
+
+}
+
+
+/* Óvalo artesanal alrededor de RENTABILIDAD */
+
+
+
+
+.profitability-header .title-line {
+
+  margin: 25px 0 0;
+
+}
+
+
+.profitability-header > p {
+
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  color: #000;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+}
+
+
+/* GRID */
+
+.profitability-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  max-width: 1600px;
+
+  margin: 0 auto;
+
+  padding-bottom: 75px;
+
+}
+
+
+.profitability-card {
+
+  position: relative;
+
+  padding: 0px 55px 0px;
+
+  text-align: left;
+
+}
+
+
+.profitability-card + .profitability-card {
+
+  border-left: 1px solid rgba(176, 55, 36, .20);
+
+}
+
+
+/* Número */
+
+.profitability-number {
+
+  color: #c78574;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 20px;
+
+}
+
+
+/* Icono */
+
+.profitability-icon {
+
+  width: 58px;
+
+  height: 58px;
+
+  margin: 0 auto 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid #b44f3f;
+
+  border-radius: 50%;
+
+  color: #b44f3f;
+
+  font-size: 20px;
+
+  font-weight: 500;
+
+}
+
+
+/* Título */
+
+.profitability-card h3 {
+
+  color: #b44f3f;
+
+  font-size: 18px;
+
+  line-height: 1.35;
+
+  font-weight: 600;
+
+  margin-bottom: 15px;
+
+}
+
+
+/* Texto */
+
+.profitability-card p {
+
+  max-width: 320px;
+
+  margin: 0 auto;
+
+  color: #000;
+
+  font-size: 16px;
+
+
+}
+
+
+/*=========================================
+ BLOQUE FINAL
+=========================================*/
+
+.profitability-highlight {
+
+
+
+  margin: 0 auto;
+
+  padding: 60px;
+
+  background: #f6dede;
+
+  width: 100%;
+
+  align-content: center;
+
+}
+
+
+.profitability-highlight-title {
+
+  display: flex;
+
+  gap: 25px;
+
+  max-width: 300px;
+}
+
+
+.profitability-highlight-title span {
+
+
+  color: #b44f3f;
+
+}
+
+
+.profitability-highlight-title h3 {
+
+  color: #262626;
+
+  font-size: 22px;
+
+  font-weight: 500;
+
+  line-height: 1.3;
+
+
+  text-align: left;
+  margin-bottom: 20px;
+
+}
+
+
+.profitability-highlight-title strong {
+
+  color: #b44f3f;
+
+  font-weight: 600;
+
+}
+
+
+.profitability-highlight li {
+
+
+  text-align: left;
+
+  color: #000;
+
+  font-size: 16px;
+
+
+    max-width: 300px;
+
+
+}
+
+/*=========================================
 CLIENTES
 =========================================*/
 
@@ -2742,7 +3144,37 @@ right:auto;
 
 }
 
+  .profitability {
 
+  background-color: #f8eeec;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+.profitability-highlight-title {
+
+  display: flex;
+
+  gap: 25px;
+
+  max-width: none;
+}
+
+.profitability-highlight li {
+
+
+  text-align: left;
+
+  color: #000;
+
+  font-size: 16px;
+
+
+    max-width: 900px;
+
+
+}
 
 .features-grid {
   grid-template-columns: repeat(2, 1fr); /* Dos columnas del mismo ancho */
@@ -2857,6 +3289,27 @@ grid-template-columns:1fr;
   text-align:center;
 
 }
+
+.profitability .container {
+  margin: 0;
+}
+
+.profitability-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  margin: 0 auto;
+
+  padding-bottom: 75px;
+
+}
+
+
+
+
+
 
 .location{
   padding: 60px 0px;
@@ -3050,8 +3503,6 @@ grid-template-columns:1fr;
 .formats-left{
 
     border-right:none;
-
-
 }
 
 .formats-left h2{
@@ -3111,6 +3562,48 @@ grid-template-columns:1fr;
     gap:50px;
 
 }
+
+.profitability-highlight {
+  padding: 40px;
+}
+
+.profitability-header {
+  padding: 40px;
+}
+
+
+  .profitability-grid {
+
+    grid-template-columns: 1fr;
+
+    width: 100%;
+  }
+
+  .profitability-card {
+
+    padding: 40px 40px;
+
+  }
+
+  .profitability-card + .profitability-card {
+
+    border-left: none;
+
+    border-top: 1px solid rgba(176, 55, 36, .20);
+    margin: 0px 40px;
+    padding: 40px 0px;
+
+  }
+
+  .profitability-card p{
+
+    margin: 0;
+    max-width: none;
+  }
+
+  .profitability-grid {
+    padding-bottom: 30px;
+  }
 
 .base-section {
   padding: 40px 0px;
@@ -3293,6 +3786,120 @@ height: auto;
     .base-section {
   padding: 30px 0px;
 }
+
+  .profitability {
+
+
+  }
+
+
+
+
+
+  .profitability-eyebrow {
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+  }
+
+
+  .profitability-header h2 {
+
+    font-size: 24px;
+
+  }
+
+
+  .profitability-header h2 span::after {
+
+    left: -10px;
+
+    right: -10px;
+
+    height: 34px;
+
+  }
+
+
+  .profitability-header > p {
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+  }
+
+
+
+
+
+  .profitability-number {
+
+    margin-bottom: 15px;
+
+  }
+
+
+  .profitability-icon {
+
+    width: 52px;
+
+    height: 52px;
+
+    margin-bottom: 20px;
+
+    font-size: 18px;
+
+  }
+
+
+  .profitability-card h3 {
+
+    font-size: 16px;
+
+  }
+
+
+  .profitability-card p {
+
+    font-size: 14px;
+
+    max-width: 320px;
+
+  }
+
+
+
+
+
+  .profitability-highlight-title {
+
+    gap: 12px;
+
+  }
+
+
+  .profitability-highlight-title span {
+
+    width: 25px;
+
+  }
+
+
+  .profitability-highlight-title h3 {
+
+    font-size: 17px;
+
+  }
+
+
+  .profitability-highlight > p {
+
+    font-size: 13px;
+
+  }
 
 .location{
 
@@ -3497,6 +4104,23 @@ font-size:30px;
   .feature img{
     margin-bottom: 10px;
   }
+
+    .profitability-header h2 {
+
+    font-size: 21px;
+
+  }
+
+
+  .profitability-header h2 span::after {
+
+    height: 30px;
+
+  }
+
+
+
+
 
   .footer {
     padding: 30px;
