@@ -678,37 +678,12 @@
 
 <section id="rentabilidad" class="profitability">
 
-    <div class="profitability-highlight">
 
-      <div class="profitability-highlight-title">
-
-        <h3>
-          Externalizar la tarta de queso con un obrador top como <span>KREM</span> permite:
-        </h3>
-
-        
-      </div>
-
-<ul>
-  <li>· Fijar un coste exacto por ración</li>
-  <li>· Reducir mermas a cero.</li>
-  <li>· Mantener un margen limpio de más del 60% en el postre.</li>
-</ul>
-
-    </div>
 
   <div class="container">
-
     <div class="profitability-header">
-
-      <h2>
-        TRES RAZONES,
-        UN SOLO RESULTADO: <br>
-        <span>RENTABILIDAD</span>
-      </h2>
-
-      <div class="title-line"></div>
-
+      <h2>AUMENTA TU RENTABILIDAD CON KREM</h2>
+          <div class="title-line"></div>
 
     </div>
 
@@ -721,11 +696,10 @@
 
 
         <h3>
-         VALIDACIÓN
         </h3>
-
+        <img src="../assets/Costes.svg" alt="">
         <p>
-          La tarta de queso artesanal elegida por más de 30 restaurantes en Barcelona.
+          Control eficiente de costos.
         </p>
 
       </article>
@@ -737,11 +711,10 @@
 
 
         <h3>
-          NEGOCIO
         </h3>
-
+        <img src="../assets/Mermas.svg" alt="">
         <p>
-          Un producto de alta rotación diseñado para hacerte ganar dinero.
+          Reducción de mermas a cero.
         </p>
 
       </article>
@@ -752,19 +725,16 @@
       <article class="profitability-card">
 
         <h3>
-          EFICIENCIA
         </h3>
+        <img src="../assets/Beneficio.svg" alt="">
 
         <p>
-          Te ahorra problemas de personal, mermas y costes de luz.
+          Amplio margen de beneficio.
         </p>
 
       </article>
 
     </div>
-
-
-
 
   </div>
 
@@ -2202,7 +2172,7 @@ BASE GALLETA
 
     width:90px;
 
-    height:2px;
+    height:1px;
 
     background:#c78574;
 
@@ -2351,10 +2321,8 @@ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
 .profitability {
 
-  background-color: #f8eeec;
+  background-color: #f6dede;
 
-    display:grid;
-    grid-template-columns:1.2fr 2.8fr;
 
 }
 
@@ -2363,11 +2331,11 @@ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
 .profitability-header {
 
-  text-align: left;
+  text-align: center;
 
-  max-width: 760px;
 
   padding: 60px;
+  padding-bottom: 0;
 
 }
 
@@ -2435,7 +2403,8 @@ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
 .profitability-header .title-line {
 
-  margin: 25px 0 0;
+  margin: 0 auto;
+  margin-top: 25px;
 
 }
 
@@ -2463,11 +2432,9 @@ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
   grid-template-columns: repeat(3, 1fr);
 
-  max-width: 1600px;
-
   margin: 0 auto;
 
-  padding-bottom: 75px;
+  padding: 60px;
 
 }
 
@@ -2479,6 +2446,9 @@ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   padding: 0px 55px 0px;
 
   text-align: left;
+
+  justify-content: center;
+  justify-items: center;
 
 }
 
@@ -2538,6 +2508,11 @@ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
 /* Título */
 
+.profitability-card img{
+  max-width: 60px;
+  margin-bottom: 20px;
+}
+
 .profitability-card h3 {
 
   color: #b44f3f;
@@ -2564,6 +2539,8 @@ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   color: #000;
 
   font-size: 16px;
+
+  text-align: center;
 
 
 }
@@ -3144,13 +3121,7 @@ right:auto;
 
 }
 
-  .profitability {
 
-  background-color: #f8eeec;
-
-    display: flex;
-    flex-direction: column;
-  }
 
 .profitability-highlight-title {
 
@@ -3303,6 +3274,8 @@ grid-template-columns:1fr;
   margin: 0 auto;
 
   padding-bottom: 75px;
+
+  padding: 60px 0px 75px;
 
 }
 
@@ -3569,7 +3542,15 @@ grid-template-columns:1fr;
 
 .profitability-header {
   padding: 40px;
+  padding-bottom: 0;
 }
+
+  .profitability-header h2 {
+
+    font-size: 20px;
+    text-align: center;
+
+  }
 
 
   .profitability-grid {
@@ -3577,6 +3558,7 @@ grid-template-columns:1fr;
     grid-template-columns: 1fr;
 
     width: 100%;
+    padding-top: 0;
   }
 
   .profitability-card {
@@ -3611,11 +3593,20 @@ grid-template-columns:1fr;
 
 .base-section h2 {
   font-size: 20px;
+  padding: 0px 30px;
 }
 
 .footer {
   padding: 40px;
 }
+
+  .footer-about h2 {
+    font-size: 20px;
+  }
+
+  .footer-about p {
+    font-size: 14px;
+  }
 
 .location {
   padding: 40px 0px;
@@ -3827,7 +3818,7 @@ height: auto;
 
   .profitability-header h2 {
 
-    font-size: 24px;
+    font-size: 20px;
 
   }
 
@@ -3920,6 +3911,8 @@ height: auto;
     font-size: 13px;
 
   }
+
+
 
 .location{
 
