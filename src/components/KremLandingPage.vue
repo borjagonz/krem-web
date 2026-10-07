@@ -2510,6 +2510,7 @@ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
 .profitability-card img{
   max-width: 60px;
+  margin: 0 auto;
   margin-bottom: 20px;
 }
 
