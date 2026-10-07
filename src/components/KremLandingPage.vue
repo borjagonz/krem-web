@@ -3787,8 +3787,28 @@ height: auto;
   padding: 30px 0px;
 }
 
-  .profitability {
+  .profitability-highlight {
+    padding: 30px;
 
+ }
+
+ .profitability-header {
+  padding: 30px;
+ }
+
+ .profitability-card {
+
+    padding: 30px 30px;
+
+  }
+
+  .profitability-card + .profitability-card {
+
+    border-left: none;
+
+    border-top: 1px solid rgba(176, 55, 36, .20);
+    margin: 0px 30px;
+    padding: 30px 0px;
 
   }
 
@@ -3958,6 +3978,14 @@ height: auto;
     .feature1 span {
     font-size: .62rem;
     line-height: 1.4; 
+  }
+
+    .footer {
+    padding: 30px;
+  }
+
+  .footer-grid {
+    gap: 30px;
   }
 
 }
