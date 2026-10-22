@@ -3361,7 +3361,7 @@ grid-template-columns:1fr;
 }
 
 .hero-copy {
-  padding-bottom: 80px;
+  padding-bottom: 120px;
 }
 
 .hero-copy h1{
