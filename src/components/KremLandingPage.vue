@@ -158,6 +158,11 @@
           </div>
 
           <h1>RESTAURACIÓ <br>PROFESSIONAL</h1>
+                    <span class="hero-copy-subtitle">
+
+            by Dolce Investments SL
+
+          </span>
           <div class="hero-divider"></div>
 
           <h2>
@@ -317,84 +322,75 @@
 
     </section>
 
-    <!-- =========================
-          ABOUT
-    ========================== -->
+<!-- ABOUT + RENTABILIDAD -->
+<section class="about" id="about">
 
-    <section
-      class="about"
-      id="about"
-    >
+  <div class="container about-grid">
 
-      <div class="container about-grid">
-        <div class="about-left">
+    <!-- IZQUIERDA: PROFESSIONALS -->
+    <div class="about-col professionals">
 
-                  <div class="about-col">
+      <h2>CREADA PARA PROFESIONALES</h2>
 
-          <h3>
+      <div class="line"></div>
 
-            KREM RESTAURACIÓ <br>
-            PROFESSIONAL
+      <ul>
+        <li class="about-li-2">
+          <img class="about-img" src="../assets/Restaurante.svg" alt="">
+          <span>RESTAURANTES</span>
+        </li>
 
-          </h3>
+        <li class="about-li-2">
+          <img class="about-img" src="../assets/Hoteles.svg" alt="">
+          <span>HOTELES</span>
+        </li>
 
-          <span>
+        <li class="about-li-2">
+          <img class="about-img" src="../assets/Cafe.svg" alt="">
+          <span>CAFETERÍAS</span>
+        </li>
 
-            by Dolce Investments SL
+        <li class="about-li-2">
+          <img class="about-img" src="../assets/Catering.svg" alt="">
+          <span>CATERING & EVENTOS</span>
+        </li>
+      </ul>
 
-          </span>
+    </div>
 
-          <div class="line"></div>
+    <!-- DERECHA: RENTABILIDAD -->
+    <div id="rentabilidad" class="profitability">
 
-          <p>
+      <div class="profitability-header">
+        <h2>AUMENTA TU RENTABILIDAD CON KREM</h2>
+        <div class="line"></div>
+      </div>
 
-            Somos la marca de cheesecakes especializada en el canal HORECA. 
-             <br> 
+      <div class="profitability-grid">
 
-            Trabajamos para restaurantes,
-            hoteles y cafeterías que buscan
-            postres de calidad superior,
-            consistentes, listos para servir
-            y que aportan valor
-            a su propuesta gastronómica.
+        <article class="profitability-card">
+          <img src="../assets/Costes.svg" alt="">
+          <p>Control eficiente de costos.</p>
+        </article>
 
-          </p>
+        <article class="profitability-card">
+          <img src="../assets/Mermas.svg" alt="">
+          <p>Reducción de mermas a cero.</p>
+        </article>
 
-
-
-        </div>
-
-
-
-        </div>
-
-        <div class="about-col professionals">
-
-          <h3>
-
-            CREADA PARA <br>
-            PROFESIONALES
-
-          </h3>
-          <div class="line"></div>
-
-          <ul>
-
-            <li class="about-li-2"><img class="about-img" src="../assets/Restaurante.svg" alt="">RESTAURANTES</li>
-
-            <li class="about-li-2"><img class="about-img" src="../assets/Hoteles.svg" alt="">HOTELES</li>
-
-            <li class="about-li-2"><img class="about-img" src="../assets/Cafe.svg" alt="">CAFETERÍAS</li>
-
-            <li class="about-li-2"><img class="about-img" src="../assets/Catering.svg" alt="">CATERING & EVENTOS</li>
-
-          </ul>
-
-        </div>
+        <article class="profitability-card">
+          <img src="../assets/Beneficio.svg" alt="">
+          <p>Amplio margen de beneficio.</p>
+        </article>
 
       </div>
 
-    </section>
+    </div>
+
+  </div>
+
+</section>
+
 
     <!-- =========================
       FORMATOS + SABORES
@@ -672,73 +668,6 @@
 
 </section>
 
-<!-- ==========================================
-     RENTABILIDAD
-========================================== -->
-
-<section id="rentabilidad" class="profitability">
-
-
-
-  <div class="container">
-    <div class="profitability-header">
-      <h2>AUMENTA TU RENTABILIDAD CON KREM</h2>
-          <div class="title-line"></div>
-
-    </div>
-
-
-    <div class="profitability-grid">
-
-      <!-- CONTROL DE COSTES -->
-
-      <article class="profitability-card">
-
-
-        <h3>
-        </h3>
-        <img src="../assets/Costes.svg" alt="">
-        <p>
-          Control eficiente de costos.
-        </p>
-
-      </article>
-
-
-      <!-- MERMAS -->
-
-      <article class="profitability-card">
-
-
-        <h3>
-        </h3>
-        <img src="../assets/Mermas.svg" alt="">
-        <p>
-          Reducción de mermas a cero.
-        </p>
-
-      </article>
-
-
-      <!-- MARGEN -->
-
-      <article class="profitability-card">
-
-        <h3>
-        </h3>
-        <img src="../assets/Beneficio.svg" alt="">
-
-        <p>
-          Amplio margen de beneficio.
-        </p>
-
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
 
 
 <section class="clientes">
@@ -774,6 +703,9 @@ FOOTER
                 Contáctanos y descubre cómo Krem
                 puede formar parte de tu carta.
             </p>
+  <a href="#contacto-degustacion" class="footer-booking-btn">
+    AGENDAR DEGUSTACIÓN
+  </a>
 
         </div>
 
@@ -1691,13 +1623,19 @@ button{
 
   font-weight:500;
 
-  margin-bottom:20px;
 
   color: #b44f3f;
 
   letter-spacing: 1px;
   font-family: "PT Serif", serif;
   font-weight: 700;
+}
+
+.hero-copy-subtitle {
+  font-size: 18px;
+  margin-top:5px;
+  margin-bottom:20px;
+  color:rgba(255, 255, 255, 0.8);
 }
 
 .hero-divider{
@@ -1845,17 +1783,17 @@ button{
  ABOUT
 ==================================================*/
 
-.about{
+/* ABOUT + RENTABILIDAD */
 
+.about {
   background-color: #f8eeec;
-
-
 }
 
-.about-grid{
-
-    display:grid;
-    grid-template-columns:1.5fr 1fr;
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: stretch;
+  gap: 0;
 }
 
 
@@ -1877,6 +1815,7 @@ button{
 
   color: #b44f3f;
   padding: 60px 0px 0px 0px;
+  text-align: center;
 
 }
 
@@ -1899,9 +1838,9 @@ button{
   height:1px;
 
   background: #b44f3f;
+  margin: 0 auto;
+  margin: 20px 0 35px;
 
-  margin-bottom:20px;
-  margin-top: 20px;
 
 }
 
@@ -1962,6 +1901,7 @@ button{
   list-style:none;
   display: grid;
   grid-template-columns:repeat(2,1fr);
+  margin: 0 auto;
 
 }
 
@@ -1969,36 +1909,77 @@ button{
 
   padding:14px 0;
   font-size: 16px;
+  font-weight: 600;
   display: flex;
-  gap: 10px;
-  
+  gap: 10px; 
 
 }
 
 .about-li-2 {
   color: #b44f3f;
   line-height: 2.5;
-}
-
-.about-img {
-  width: 23px;
+  justify-content: center;
+  margin: 0 auto;
+  flex-direction: column;
 }
 
 .check {
   color: #b44f3f;
 }
 
-.professionals{
+.professionals {
+  background: #f6dede;
+  padding: 60px;
+  min-width: 0;
+}
 
-  background:#f6dede;
+.professionals span {
+  font-size: 16px;
+  font-weight: 500;
+}
 
-  height: 100%;
+.professionals h2 {
+    font-size:24px;
 
-  padding:60px;
+    color:#b44f3f;
 
-padding-top: 0px;
+    font-weight:600;
 
+    margin-bottom:20px;
+}
 
+.professionals .line {
+  margin: 20px 0 35px;
+}
+
+.professionals ul {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.professionals .about-li-2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  color: #b44f3f;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.professionals .about-img {
+  width: 25px;
+  flex: 0 0 20px;
+  object-fit: contain;
+  margin: 0;
 }
 
 /*==================================================
@@ -2321,7 +2302,7 @@ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
 .profitability {
 
-  background-color: #f6dede;
+  background-color: #f8eeec;
 
 
 }
@@ -2330,9 +2311,6 @@ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
 
 .profitability-header {
-
-  text-align: center;
-
 
   padding: 60px;
   padding-bottom: 0;
@@ -2405,7 +2383,6 @@ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
   margin: 0 auto;
   margin-top: 25px;
-
 }
 
 
@@ -2434,7 +2411,7 @@ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
   margin: 0 auto;
 
-  padding: 60px;
+  padding: 60px 0px;
 
 }
 
@@ -2509,7 +2486,7 @@ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 /* Título */
 
 .profitability-card img{
-  max-width: 60px;
+  max-width: 50px;
   margin: 0 auto;
   margin-bottom: 20px;
 }
@@ -2710,6 +2687,30 @@ FOOTER
     padding-left: 60px;
 
 }
+
+
+.footer-booking-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  padding: 13px 26px;
+  background: transparent;
+  color: #fffaf8;
+  color: #b44f3f;
+  border: 1px solid #b44f3f;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.footer-booking-btn:hover {
+  background: #b44f3f;
+  color: #fffaf8;
+}
+
 
 .footer h2{
 
@@ -3039,13 +3040,7 @@ FOOTER
   max-width: 400px;
 }
 
-.about-col ul{
 
-  list-style:none;
-  display: grid;
-  grid-template-columns:repeat(1,1fr);
-
-}
 
 .container.formats-grid{
   grid-template-columns: 1fr 1fr;
@@ -3184,6 +3179,14 @@ grid-template-columns:1fr;
 
 }
 
+.about-col ul{
+
+  list-style:none;
+  display: grid;
+  grid-template-columns:repeat(2,1fr);
+
+}
+
 .container.formats-grid{
   display: flex;
   flex-wrap: wrap;
@@ -3277,6 +3280,8 @@ grid-template-columns:1fr;
   padding-bottom: 75px;
 
   padding: 60px 0px 75px;
+    padding-top: 30px;
+
 
 }
 
@@ -3355,6 +3360,10 @@ grid-template-columns:1fr;
   display:none;
 }
 
+.hero-copy {
+  padding-bottom: 80px;
+}
+
 .hero-copy h1{
 
 font-size:36px;
@@ -3418,10 +3427,10 @@ grid-template-columns:1fr;
 .about-left{
   display: flex;
   flex-wrap: wrap;
+  display: none;
 }
 
 .about-col {
-  width: 100vw;
   padding: 40px;
 }
 
@@ -3431,8 +3440,8 @@ grid-template-columns:1fr;
   line-height: 1.3;
 }
 
-.about span {
-  font-size: 18px;
+.professionals h2 {
+  font-size: 20px;
 }
 
 .about p {
@@ -3554,38 +3563,14 @@ grid-template-columns:1fr;
   }
 
 
+
   .profitability-grid {
-
-    grid-template-columns: 1fr;
-
-    width: 100%;
-    padding-top: 0;
+    padding-bottom: 40px;
+    padding-top: 20px;
   }
 
   .profitability-card {
-
-    padding: 40px 40px;
-
-  }
-
-  .profitability-card + .profitability-card {
-
-    border-left: none;
-
-    border-top: 1px solid rgba(176, 55, 36, .20);
-    margin: 0px 40px;
-    padding: 40px 0px;
-
-  }
-
-  .profitability-card p{
-
-    margin: 0;
-    max-width: none;
-  }
-
-  .profitability-grid {
-    padding-bottom: 30px;
+    padding: 0px 40px;
   }
 
 .base-section {
@@ -3734,8 +3719,11 @@ height: auto;
 }
 
 .about-col {
-  width: 100vw;
   padding: 30px;
+}
+
+.about-img {
+  width: 40px;
 }
 
 .about h3 {
@@ -3782,11 +3770,15 @@ height: auto;
   .profitability-highlight {
     padding: 30px;
 
+
  }
 
  .profitability-header {
   padding: 30px;
+  padding-bottom: 0px;
  }
+
+
 
  .profitability-card {
 
@@ -3794,17 +3786,11 @@ height: auto;
 
   }
 
-  .profitability-card + .profitability-card {
-
-    border-left: none;
-
-    border-top: 1px solid rgba(176, 55, 36, .20);
-    margin: 0px 30px;
-    padding: 30px 0px;
-
-  }
 
 
+ .profitability-card img {
+  width: 40px;
+ }
 
 
 
@@ -4052,6 +4038,51 @@ font-size:30px;
   transform-origin: left center; 
 }
 
+.about-col ul{
+
+  list-style:none;
+  display: grid;
+  grid-template-columns:repeat(1,1fr);
+  gap: 20px;
+
+
+}
+
+.about-li-2{
+  gap: 20px;
+}
+
+   .profitability-grid {
+
+  grid-template-columns: 1fr;
+
+    width: 100%;
+    padding-top: 0;
+    padding-bottom: 20px;
+  }
+
+  .profitability-card {
+    padding: 10px 0px 30px;
+    margin: 0px 30px;
+  }
+
+  .profitability-card + .profitability-card {
+
+    border-left: none;
+
+    border-top: 1px solid rgba(176, 55, 36, .20);
+    margin: 0px 30px;
+    padding: 25px 30px;
+
+  }
+
+      .profitability-header h2 {
+
+    text-align: left;
+
+  }
+
+
 .footer2 {
 
   font-size: 10px;
@@ -4129,7 +4160,7 @@ font-size:30px;
 
     .profitability-header h2 {
 
-    font-size: 21px;
+    text-align: left;
 
   }
 
