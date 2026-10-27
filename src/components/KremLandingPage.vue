@@ -516,7 +516,7 @@
 
                 <article class="flavour">
 
-          <img src="../assets/Lotus-DulceLeche.jpg">
+          <img src="../assets/DulceLeche.jpg">
             <div class="flavour-text">          
               <h3>DULCE DE LECHE</h3>
               <p>
@@ -2486,7 +2486,7 @@ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 /* Título */
 
 .profitability-card img{
-  max-width: 50px;
+  max-width: 58px;
   margin: 0 auto;
   margin-bottom: 20px;
 }
