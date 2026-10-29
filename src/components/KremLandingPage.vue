@@ -725,7 +725,7 @@ FOOTER
 
             </a>
 
-            <a href="mailto:horeca@kremcheesecake.com">
+            <a href="mailto:krem@krembcn.com">
 
             <img src="../assets/Email.svg">
 
@@ -734,13 +734,13 @@ FOOTER
             </a>
 
             <a
-                href="https://kremcheesecake.com"
+                href="https://krem.es"
                 target="_blank"
             >
 
             <img src="../assets/Web.svg">
 
-                <span>kremcheesecake.com</span>
+                <span>krem.es</span>
 
             </a>
 
