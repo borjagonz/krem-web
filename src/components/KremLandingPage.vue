@@ -703,9 +703,14 @@ FOOTER
                 Contáctanos y descubre cómo Krem
                 puede formar parte de tu carta.
             </p>
-  <a href="#contacto-degustacion" class="footer-booking-btn">
-    AGENDAR DEGUSTACIÓN
-  </a>
+<a
+  href="https://wa.me/34624692864?text=Hola%2C%20estoy%20interesado%2Fa%20en%20agendar%20una%20degustaci%C3%B3n%20profesional%20de%20Krem."
+  class="footer-booking-btn"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  AGENDAR DEGUSTACIÓN
+</a>
 
         </div>
 
